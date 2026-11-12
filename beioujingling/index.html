@@ -1,0 +1,1922 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北欧精灵melody作品 - 插画角色与故事图集</title>
+  <meta name="description" content="北欧精灵melody作品汇集森林系插画、角色设定与短篇故事图集，包含白桦林精灵、苔藓小屋、雪夜邮差等具体条目，适合插画爱好者与角色设定读者浏览。">
+  <meta name="keywords" content="北欧精灵melody作品">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232a5d4f'/%3E%3Cpath d='M16 5l4 9-4 13-4-13z' fill='%23d9e8c7'/%3E%3Ccircle cx='16' cy='14' r='2.5' fill='%23f2b84b'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #2a5d4f;
+      --primary-light: #4a8a72;
+      --primary-dark: #173d32;
+      --accent: #d9892b;
+      --accent-soft: #f3d9b8;
+      --bg: #f5f2e9;
+      --surface: #ffffff;
+      --text: #26332e;
+      --text-secondary: #5b6c62;
+      --text-muted: #8a9a90;
+      --line: #d9e0d6;
+      --radius-card: 14px;
+      --radius-btn: 8px;
+      --radius-tag: 6px;
+      --radius-banner: 20px;
+      --shadow-default: 0 2px 12px rgba(42, 93, 79, 0.08);
+      --shadow-hover: 0 8px 24px rgba(42, 93, 79, 0.14);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --sticky-offset: 108px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* sticky group */
+    .announcement-bar {
+      background: var(--primary-dark);
+      color: #e5efe6;
+      font-size: 13px;
+      padding: 7px 0;
+      text-align: center;
+      letter-spacing: 0.2px;
+      position: relative;
+      z-index: 60;
+    }
+    .announcement-bar .inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 22px;
+      align-items: center;
+    }
+    .announcement-bar .brand-mark { color: var(--accent-soft); font-weight: 600; }
+    .announcement-bar .sep { opacity: 0.35; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 242, 233, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      transition: box-shadow 0.2s;
+    }
+    .site-header .inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .brand-logo .glyph {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-logo .glyph svg { width: 24px; height: 24px; }
+    .brand-logo .name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+      flex: 1;
+    }
+    .main-nav a {
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .main-nav a:hover { background: #e3ece4; color: var(--primary-dark); }
+    .header-search {
+      display: flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 2px 4px 2px 10px;
+      flex-shrink: 0;
+      width: 200px;
+    }
+    .header-search input {
+      border: 0;
+      outline: 0;
+      font-size: 13px;
+      background: transparent;
+      width: 100%;
+      color: var(--text);
+      padding: 5px 0;
+    }
+    .header-search input::placeholder { color: var(--text-muted); }
+    .header-search button {
+      background: var(--primary);
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .header-search button:hover { background: var(--primary-light); }
+
+    .menu-toggle {
+      display: none;
+      background: var(--primary);
+      color: white;
+      border: 0;
+      border-radius: var(--radius-btn);
+      padding: 8px 12px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .menu-toggle .bar { display: block; width: 18px; height: 2px; background: white; margin: 3px 0; border-radius: 1px; }
+    .mobile-mask {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(23, 61, 50, 0.35);
+      z-index: 45;
+    }
+    .mobile-mask.active { display: block; }
+
+    /* hero */
+    .hero {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 40px 20px 32px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.22;
+      color: var(--primary-dark);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .hero-text .sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 26px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: white;
+      border: 0;
+      border-radius: var(--radius-btn);
+      padding: 11px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 10px 22px;
+      font-size: 15px;
+      color: var(--primary-dark);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--primary-light); background: #eaf1ea; }
+    .hero-visual {
+      position: relative;
+      border-radius: var(--radius-banner);
+      overflow: hidden;
+      background: linear-gradient(155deg, #c9dfc0 0%, #a3c4a8 45%, #7ea88d 100%);
+      aspect-ratio: 4 / 3;
+      box-shadow: var(--shadow-default);
+    }
+    .hero-visual svg { width: 100%; height: 100%; display: block; }
+    .hero-visual .float-badge {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: var(--primary-dark);
+      font-weight: 500;
+      box-shadow: var(--shadow-default);
+    }
+    .hero-visual .float-badge strong { color: var(--accent); font-size: 16px; }
+
+    /* layout */
+    .page-layout {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+      display: grid;
+      grid-template-columns: 178px minmax(0, 1fr) 252px;
+      gap: 34px;
+      align-items: start;
+    }
+
+    /* left channel */
+    .channel-index {
+      position: sticky;
+      top: var(--sticky-offset);
+      padding-top: 4px;
+    }
+    .channel-index h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .channel-index ul { list-style: none; }
+    .channel-index li { margin-bottom: 2px; }
+    .channel-index a {
+      display: block;
+      padding: 7px 12px;
+      font-size: 14px;
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      border-left: 2px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .channel-index a:hover,
+    .channel-index a.active {
+      background: #e6efe7;
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* center */
+    .main-content { min-width: 0; }
+
+    /* right aside */
+    .aux-aside {
+      position: sticky;
+      top: var(--sticky-offset);
+    }
+    .aux-panel {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 20px 18px;
+      box-shadow: var(--shadow-default);
+      margin-bottom: 20px;
+    }
+    .aux-panel h3 {
+      font-size: 15px;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+    }
+    .hot-list { list-style: none; }
+    .hot-list li {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 13px;
+      align-items: flex-start;
+      border-bottom: 1px dashed #eef2ec;
+    }
+    .hot-list li:last-child { border-bottom: 0; }
+    .hot-list .rank {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: #e8f0e8;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .hot-list li:nth-child(1) .rank { background: var(--accent); color: white; }
+    .hot-list li:nth-child(2) .rank { background: var(--accent-soft); color: #8a5a15; }
+    .hot-list .info { flex: 1; }
+    .hot-list .info .t { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+    .hot-list .info .meta { color: var(--text-muted); font-size: 12px; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-cloud a {
+      font-size: 12px;
+      padding: 5px 10px;
+      background: #eef4ed;
+      border-radius: var(--radius-tag);
+      color: var(--primary-dark);
+      transition: background 0.15s;
+    }
+    .tag-cloud a:hover { background: #dce9dc; }
+
+    /* sections */
+    .section {
+      margin-bottom: 44px;
+      scroll-margin-top: var(--sticky-offset);
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .section-header h2 {
+      font-size: 22px;
+      color: var(--primary-dark);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .section-header .more-link {
+      font-size: 13px;
+      color: var(--primary-light);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .section-header .more-link:hover { color: var(--accent); }
+
+    /* overview text */
+    .overview-text {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 26px 28px;
+      box-shadow: var(--shadow-default);
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    .overview-text p + p { margin-top: 12px; }
+    .overview-text strong { color: var(--primary-dark); font-weight: 600; }
+
+    /* featured cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .work-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .work-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .work-card .thumb {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #e3ece4;
+      position: relative;
+    }
+    .work-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .work-card .type-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(42, 93, 79, 0.9);
+      color: white;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+    .work-card .body { padding: 14px 15px 16px; flex: 1; display: flex; flex-direction: column; }
+    .work-card .body h3 {
+      font-size: 15px;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .work-card .body .desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .work-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .work-card .tags span {
+      font-size: 11px;
+      padding: 2px 8px;
+      background: #eff5ef;
+      color: var(--primary);
+      border-radius: 4px;
+    }
+    .work-card .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid #f0f4ef;
+      padding-top: 8px;
+    }
+    .work-card .meta .heat { color: var(--accent); font-weight: 600; }
+
+    /* update list */
+    .update-list {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 6px 0;
+      overflow: hidden;
+    }
+    .update-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 22px;
+      font-size: 14px;
+      align-items: flex-start;
+      border-bottom: 1px solid #f0f4ef;
+      transition: background 0.15s;
+    }
+    .update-item:last-child { border-bottom: 0; }
+    .update-item:hover { background: #f7faf6; }
+    .update-item .date {
+      flex-shrink: 0;
+      width: 60px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+    .update-item .content { flex: 1; min-width: 0; }
+    .update-item .content .t {
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .update-item .content .s {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* category grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      border: 1px solid transparent;
+      display: block;
+    }
+    .category-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: #c7dac7;
+    }
+    .category-item .icon {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      background: #e8f0e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .category-item .name {
+      font-size: 14px;
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .category-item .count {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* deep analysis */
+    .deep-analysis {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 32px 34px;
+      box-shadow: var(--shadow-default);
+    }
+    .deep-analysis h2 {
+      font-size: 24px;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .deep-analysis .lead {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.8;
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+    }
+    .deep-analysis h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin: 26px 0 10px;
+      font-weight: 600;
+    }
+    .deep-analysis h3:first-of-type { margin-top: 0; }
+    .deep-analysis p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .deep-analysis ul {
+      margin: 10px 0 14px 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .deep-analysis li { margin-bottom: 4px; }
+    .deep-analysis .callout {
+      background: #f7f9f0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 18px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      border: 1px solid #e3ebd9;
+    }
+    .deep-analysis .callout strong { color: var(--primary-dark); }
+
+    /* guide */
+    .guide-panel {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 26px 28px;
+      box-shadow: var(--shadow-default);
+    }
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      counter-reset: step;
+    }
+    .guide-step {
+      position: relative;
+      padding-left: 44px;
+      min-height: 80px;
+    }
+    .guide-step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .guide-step h3 {
+      font-size: 15px;
+      color: var(--primary-dark);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .guide-step p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* faq */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 15px 22px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--primary-dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 20px;
+      color: var(--primary-light);
+      flex-shrink: 0;
+      font-weight: 300;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item summary:hover { background: #f6faf5; }
+    .faq-item .answer {
+      padding: 0 22px 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* comments */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-default);
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .comment-card .user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comment-card .avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #dfeadf;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .comment-card .nick { font-weight: 600; color: var(--primary-dark); font-size: 13px; }
+    .comment-card .time { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+    .comment-card .text { flex: 1; }
+    .comment-card .like { font-size: 11px; color: var(--text-muted); }
+
+    /* news */
+    .news-list {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 22px;
+      border-bottom: 1px solid #f0f4ef;
+      align-items: flex-start;
+    }
+    .news-item:last-child { border-bottom: 0; }
+    .news-item .date-box {
+      flex-shrink: 0;
+      text-align: center;
+      width: 52px;
+      background: #f1f6f0;
+      border-radius: 8px;
+      padding: 6px 2px;
+    }
+    .news-item .date-box .d { font-size: 18px; font-weight: 700; color: var(--primary); line-height: 1.1; }
+    .news-item .date-box .m { font-size: 11px; color: var(--text-muted); }
+    .news-item .info { flex: 1; min-width: 0; }
+    .news-item .info h3 {
+      font-size: 15px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .news-item .info p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* related tags */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-tags a {
+      font-size: 13px;
+      padding: 8px 16px;
+      background: var(--surface);
+      border-radius: var(--radius-tag);
+      box-shadow: var(--shadow-default);
+      color: var(--primary-dark);
+      border: 1px solid transparent;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .related-tags a:hover { border-color: var(--primary-light); background: #f3f9f2; }
+
+    /* supplemental - timeline */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px 28px 24px 48px;
+      box-shadow: var(--shadow-default);
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 30px;
+      bottom: 30px;
+      width: 2px;
+      background: #dce8da;
+      border-radius: 1px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 18px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      border: 2px solid var(--surface);
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+    .timeline-item .tl-date {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .timeline-item .tl-title {
+      font-size: 14px;
+      color: var(--primary-dark);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .timeline-item .tl-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* footer */
+    .site-footer {
+      background: var(--primary-dark);
+      color: #c2d5c8;
+      padding: 44px 20px 28px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-brand .logo-row .glyph {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #3a7a65;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-brand .logo-row .glyph svg { width: 20px; height: 20px; }
+    .footer-brand .logo-row .name { font-size: 16px; font-weight: 700; color: #eef5ee; }
+    .footer-brand .tagline { font-size: 13px; color: #9db8a6; line-height: 1.7; max-width: 320px; }
+    .footer-col h4 {
+      font-size: 13px;
+      color: #eef5ee;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 6px; }
+    .footer-col a { color: #9db8a6; transition: color 0.15s; }
+    .footer-col a:hover { color: #eef5ee; }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #2f5a4d;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: #7f9b8b;
+    }
+
+    /* back to top */
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 26px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      border: 0;
+      box-shadow: 0 4px 16px rgba(42, 93, 79, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 40;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { transform: translateY(-3px); background: var(--primary-light); }
+
+    /* search feedback */
+    .search-feedback {
+      display: none;
+      background: #fff8e8;
+      border: 1px solid #f0d9a8;
+      color: #7a5a1a;
+      padding: 10px 16px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    .search-feedback.active { display: block; }
+    .hidden-by-search { display: none !important; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+
+    @media (max-width: 1024px) {
+      .page-layout {
+        grid-template-columns: 160px minmax(0, 1fr);
+        gap: 26px;
+      }
+      .aux-aside {
+        grid-column: 1 / -1;
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .hero { gap: 28px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      .main-nav { display: none; }
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        padding: 12px 16px;
+        box-shadow: var(--shadow-hover);
+        border-bottom: 1px solid var(--line);
+        z-index: 55;
+        gap: 2px;
+      }
+      .main-nav.open a { padding: 10px 12px; border-radius: 6px; }
+      .menu-toggle { display: block; }
+      .header-search { width: 150px; }
+      .site-header .inner { position: relative; gap: 14px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { max-width: 480px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 740px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+        padding-bottom: 40px;
+      }
+      .channel-index {
+        position: static;
+        margin-bottom: 6px;
+      }
+      .channel-index ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .channel-index li { margin-bottom: 0; }
+      .channel-index a { border-left: 0; padding: 6px 12px; background: var(--surface); box-shadow: var(--shadow-default); }
+      .aux-aside { grid-template-columns: 1fr; }
+      .hero { padding: 26px 16px 20px; }
+      .hero-text .sub { font-size: 15px; }
+      .overview-text, .deep-analysis, .guide-panel { padding: 22px 18px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .header-search { display: none; }
+      .section-header h2 { font-size: 20px; }
+      .comment-grid { grid-template-columns: 1fr; }
+      .update-item { padding: 12px 16px; gap: 10px; }
+      .update-item .date { width: 48px; font-size: 11px; }
+      .news-item { padding: 14px 16px; gap: 12px; }
+      .timeline { padding: 20px 18px 20px 40px; }
+      .timeline::before { left: 18px; }
+      .timeline-item::before { left: -26px; }
+      .back-to-top { right: 14px; bottom: 18px; width: 40px; height: 40px; }
+    }
+
+    @media (max-width: 420px) {
+      .brand-logo .name { font-size: 16px; }
+      .hero-actions .btn-primary, .hero-actions .btn-ghost { width: 100%; justify-content: center; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 公告条 -->
+  <div class="announcement-bar" role="region" aria-label="更新公告">
+    <div class="inner">
+      <span class="brand-mark">北欧精灵melody作品</span>
+      <span class="sep">|</span>
+      <span>11月6日 新增「雪夜邮差·第三封」</span>
+      <span class="sep">|</span>
+      <span>本周共更新 6 组角色设定图</span>
+    </div>
+  </div>
+
+  <!-- 页头 -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="/#hero" class="brand-logo" aria-label="北欧精灵melody作品 首页">
+        <span class="glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4L20 13L16 28L12 13L16 4Z" fill="#D9E8C7"/>
+            <circle cx="16" cy="13" r="2.8" fill="#F2B84B"/>
+            <path d="M8 10C10 8 12 8 14 10" stroke="#D9E8C7" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M18 10C20 8 22 8 24 10" stroke="#D9E8C7" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="name">北欧精灵melody作品</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选作品</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <form class="header-search" id="searchForm" role="search" aria-label="站内搜索">
+        <input type="search" id="searchInput" placeholder="搜索作品或角色…" aria-label="搜索作品或角色">
+        <button type="submit" aria-label="搜索">搜索</button>
+      </form>
+      <button class="menu-toggle" id="menuToggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-mask" id="mobileMask"></div>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>北欧精灵melody作品</h1>
+      <p class="sub">森林系插画、角色设定与短篇故事图集。白桦林精灵、苔藓小屋、雪夜邮差这些条目都在这里，适合喜欢北欧民谣氛围和手绘角色的人慢慢翻。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选作品 →</a>
+        <a href="/#updates" class="btn-ghost">查看最新更新</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 480 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c9dfc0"/>
+            <stop offset="55%" stop-color="#a3c4a8"/>
+            <stop offset="100%" stop-color="#7ea88d"/>
+          </linearGradient>
+          <radialGradient id="sun" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#f3e2b3" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#f3e2b3" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="480" height="360" fill="url(#sky)"/>
+        <circle cx="360" cy="80" r="60" fill="url(#sun)"/>
+        <!-- 远景针叶林 -->
+        <path d="M0 260 L40 190 L70 230 L110 170 L150 220 L190 180 L230 230 L270 195 L310 235 L350 200 L390 240 L430 210 L480 250 L480 360 L0 360Z" fill="#5c8471" opacity="0.55"/>
+        <path d="M0 290 L50 235 L95 270 L140 225 L185 265 L230 240 L280 275 L330 245 L380 280 L430 250 L480 285 L480 360 L0 360Z" fill="#3e6555" opacity="0.75"/>
+        <!-- 近景白桦 -->
+        <rect x="60" y="120" width="7" height="200" fill="#e8e4d8" rx="2"/>
+        <path d="M60 150 q-30 -20 -50 -10" stroke="#e8e4d8" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M67 170 q30 -18 52 -8" stroke="#e8e4d8" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <rect x="62" y="180" width="7" height="4" fill="#3e6555" opacity="0.5"/>
+        <rect x="62" y="210" width="7" height="4" fill="#3e6555" opacity="0.5"/>
+        <!-- 精灵小人 -->
+        <ellipse cx="240" cy="265" rx="44" ry="8" fill="#2a5d4f" opacity="0.25"/>
+        <path d="M225 250 Q240 200 255 250" fill="#d9e8c7"/>
+        <circle cx="240" cy="215" r="14" fill="#f3e2b3"/>
+        <path d="M228 208 Q240 196 252 208" fill="#3e6555"/>
+        <circle cx="236" cy="214" r="2" fill="#2a5d4f"/>
+        <circle cx="244" cy="214" r="2" fill="#2a5d4f"/>
+        <path d="M236 220 Q240 224 244 220" stroke="#2a5d4f" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M225 250 Q220 265 228 270" stroke="#d9e8c7" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M255 250 Q260 265 252 270" stroke="#d9e8c7" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- 星星 -->
+        <circle cx="120" cy="60" r="2" fill="#f3e2b3"/>
+        <circle cx="200" cy="45" r="1.5" fill="#f3e2b3"/>
+        <circle cx="320" cy="100" r="1.8" fill="#f3e2b3"/>
+      </svg>
+      <span class="float-badge">已收录 <strong>46</strong> 组作品</span>
+    </div>
+  </section>
+
+  <!-- 主布局 -->
+  <div class="page-layout" id="mainLayout">
+
+    <!-- 左侧频道索引 -->
+    <aside class="channel-index" aria-label="作品频道">
+      <h2>作品频道</h2>
+      <ul>
+        <li><a href="/#featured" class="active">精选作品</a></li>
+        <li><a href="/#updates">最新更新</a></li>
+        <li><a href="/#categories">分类入口</a></li>
+        <li><a href="/#analysis">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#related">相关推荐</a></li>
+        <li><a href="/#timeline">创作时间线</a></li>
+        <li><a href="/#submit">投稿交流</a></li>
+      </ul>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="main-content">
+
+      <!-- 搜索反馈 -->
+      <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+
+      <!-- 1. 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2>北欧精灵插画与角色设定</h2>
+        </div>
+        <div class="overview-text">
+          <p><strong>北欧精灵melody作品</strong>围绕森林、苔原和极夜展开。常见的角色有白桦林守夜人、苔藓小屋的烘焙师、雪夜邮差和溪流边的采集者。画风偏手绘水彩，线条不刻意压齐，颜色以灰绿、雾蓝和干草黄为主。</p>
+          <p>从内容方向看，大致分三类：一是单幅场景插画，比如《白桦林晨雾》《苔藓小屋的下午茶》；二是角色设定图，附带身高比例、服装细节和随身物品说明；三是短篇故事图集，用6到10张连续画面讲一个小事件，例如《雪夜邮差·第三封》用七张图交代了一封迟到的信如何穿过封冻的溪谷。</p>
+          <p>最近一个月比较受关注的是“雪夜邮差”系列和“溪流采集者”手账本内页图。前者在10月28日发布了第三封，后者在10月19日更新了植物标本页。这些条目在插画爱好者里讨论较多，主要因为场景里藏着可辨认的北欧植物——越橘、岩高兰、驯鹿苔——对植物细节感兴趣的人会专门放大看。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="section-header">
+          <h2>精选作品推荐</h2>
+          <a href="/#categories" class="more-link">按分类查看 ›</a>
+        </div>
+        <div class="card-grid">
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/birchforest11/400/300" alt="白桦林晨雾插画，灰绿色调森林与精灵背影" width="400" height="300" loading="lazy">
+              <span class="type-badge">场景插画</span>
+            </div>
+            <div class="body">
+              <h3>白桦林晨雾</h3>
+              <div class="tags"><span>白桦林</span><span>晨雾</span><span>水彩</span></div>
+              <p class="desc">画面里只有背影和雾，树干上的疤节画得很细。适合看氛围，不适合找完整故事。</p>
+              <div class="meta"><span>评分 4.7</span><span class="heat">热度 2.3k</span></div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/mossyhouse07/400/300" alt="苔藓小屋外观设定图，屋顶长满苔藓的木头房子" width="400" height="300" loading="lazy">
+              <span class="type-badge">场景设定</span>
+            </div>
+            <div class="body">
+              <h3>苔藓小屋的下午茶</h3>
+              <div class="tags"><span>苔藓小屋</span><span>室内</span><span>器皿</span></div>
+              <p class="desc">八张图交代了小屋内部格局，茶杯和烤盘上的纹样可以单独看。家具比例有点松，跟建筑外观对不上。</p>
+              <div class="meta"><span>评分 4.5</span><span class="heat">热度 1.8k</span></div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/snowpost22/400/300" alt="雪夜邮差角色骑着驯鹿穿过雪原的插画" width="400" height="300" loading="lazy">
+              <span class="type-badge">故事图集</span>
+            </div>
+            <div class="body">
+              <h3>雪夜邮差·第三封</h3>
+              <div class="tags"><span>雪夜邮差</span><span>驯鹿</span><span>连续画面</span></div>
+              <p class="desc">七张图讲一封信送错山谷再折返。第四张的雪坡角度和第七张的出发地图对不上，讨论区有人专门标出来了。</p>
+              <div class="meta"><span>评分 4.8</span><span class="heat">热度 3.1k</span></div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/streampicker15/400/300" alt="溪流采集者手账内页，压平的植物标本与手写标签" width="400" height="300" loading="lazy">
+              <span class="type-badge">手账内页</span>
+            </div>
+            <div class="body">
+              <h3>溪流采集者·植物标本页</h3>
+              <div class="tags"><span>溪流采集者</span><span>植物标本</span><span>越橘</span></div>
+              <p class="desc">越橘、岩高兰、驯鹿苔各占一栏，旁边有手写编号。编号规则目前只出现三页，还没完整说明。</p>
+              <div class="meta"><span>评分 4.6</span><span class="heat">热度 1.5k</span></div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/nightwatch09/400/300" alt="白桦林守夜人角色设定图，站立全身像与道具" width="400" height="300" loading="lazy">
+              <span class="type-badge">角色设定</span>
+            </div>
+            <div class="body">
+              <h3>白桦林守夜人</h3>
+              <div class="tags"><span>守夜人</span><span>全身设定</span><span>提灯</span></div>
+              <p class="desc">附了三视图和提灯结构分解。围巾长度在不同图里不一致，作者10月25日在评论区说会统一修订。</p>
+              <div class="meta"><span>评分 4.4</span><span class="heat">热度 1.2k</span></div>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/peatbog33/400/300" alt="苔原沼泽的黄昏场景插画，低矮灌木与积水" width="400" height="300" loading="lazy">
+              <span class="type-badge">场景插画</span>
+            </div>
+            <div class="body">
+              <h3>苔原沼泽的黄昏</h3>
+              <div class="tags"><span>苔原</span><span>黄昏</span><span>低饱和</span></div>
+              <p class="desc">颜色压得很暗，积水的反光用了三层叠色。有人觉得太灰，作者在10月21日回复说原本就想要闷一点。</p>
+              <div class="meta"><span>评分 4.2</span><span class="heat">热度 0.9k</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="section" id="updates">
+        <div class="section-header">
+          <h2>最新更新与动态</h2>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <div class="date">11-06</div>
+            <div class="content">
+              <div class="t">「雪夜邮差·第三封」发布</div>
+              <div class="s">七张连续画面，新增雪坡折返段，作者注明雪地足迹比第二封多画了四层。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">11-04</div>
+            <div class="content">
+              <div class="t">白桦林守夜人·围巾修订版</div>
+              <div class="s">统一了三视图里围巾长度，补了一张提灯内部结构草稿。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">11-02</div>
+            <div class="content">
+              <div class="t">苔藓小屋的下午茶·器皿补充</div>
+              <div class="s">追加两张茶杯纹样特写，烤盘上的刻字改成了芬兰语拼写。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-30</div>
+            <div class="content">
+              <div class="t">溪流采集者·手账第四页</div>
+              <div class="s">新增岩高兰和驯鹿苔的标本页，编号规则补了字母前缀。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-28</div>
+            <div class="content">
+              <div class="t">「雪夜邮差·第三封」预告图</div>
+              <div class="s">一张驯鹿剪影加半页信件，评论区有人猜收信人是守夜人。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-25</div>
+            <div class="content">
+              <div class="t">苔原沼泽的黄昏·配色说明</div>
+              <div class="s">作者贴了三层叠色的色值，主色 #5a6b52，反光 #7e8f7a。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-21</div>
+            <div class="content">
+              <div class="t">白桦林晨雾·高清重扫</div>
+              <div class="s">原图重新扫描，雾的层次比旧版多保留了两档灰。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-19</div>
+            <div class="content">
+              <div class="t">溪流采集者·植物标本页发布</div>
+              <div class="s">越橘、岩高兰、驯鹿苔各占一栏，附手写编号。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-15</div>
+            <div class="content">
+              <div class="t">苔藓小屋·建筑外观修订</div>
+              <div class="s">屋顶苔藓厚度调低，门框比例改窄，和室内图对齐。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <div class="date">10-12</div>
+            <div class="content">
+              <div class="t">「雪夜邮差·第二封」加笔</div>
+              <div class="s">补了邮差手套的磨损细节，作者说第二封画得急。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-header">
+          <h2>按作品类型找</h2>
+        </div>
+        <div class="category-grid">
+          <a href="/#featured" class="category-item">
+            <div class="icon">❄</div>
+            <div class="name">雪夜邮差系列</div>
+            <div class="count">3 组 · 连续画面</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">🌿</div>
+            <div class="name">溪流采集者手账</div>
+            <div class="count">4 页 · 植物标本</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">🏠</div>
+            <div class="name">苔藓小屋设定</div>
+            <div class="count">6 图 · 室内外</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">🌲</div>
+            <div class="name">白桦林角色</div>
+            <div class="count">5 组 · 三视图</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">🌙</div>
+            <div class="name">极夜场景插画</div>
+            <div class="count">9 幅 · 单幅</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">🫐</div>
+            <div class="name">越橘与岩高兰</div>
+            <div class="count">7 图 · 植物细节</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">✉</div>
+            <div class="name">信件与邮差道具</div>
+            <div class="count">4 组 · 物件设定</div>
+          </a>
+          <a href="/#featured" class="category-item">
+            <div class="icon">🦌</div>
+            <div class="name">驯鹿与动物角色</div>
+            <div class="count">5 组 · 坐骑设定</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="section" id="analysis">
+        <div class="deep-analysis">
+          <h2>雪夜邮差系列的画面叙事拆解</h2>
+          <p class="lead">第三封发布后，讨论集中在“雪坡折返”这一段。七张图里第四张和第七张的地理关系对不上，有人认为是画错了，有人觉得是故意留的叙事缺口。把已公开的画面信息按层拆开来看，能分清哪些是事实、哪些是推测。</p>
+
+          <h3>画面里可核对的时间与位置</h3>
+          <p>第三封的七张图按发布顺序编号，场景依次是：邮局门口 → 白桦林小径 → 封冻溪谷 → 雪坡南面 → 雪坡北面 → 山谷木屋 → 回到邮局。每张图右下角有手写编号和简笔地形标记。第四张的标记显示邮差在溪谷东侧，第七张的标记却显示他从西侧返回。溪谷的走向在前两张图里已经画明，东西两侧之间没有桥。</p>
+          <p>作者在11月6日发布时的附言只写了“第三封，信送到了，人绕了路”，没有解释绕路的具体原因。评论区两条高赞留言分别指向两种可能：其一是邮差走错了方向，其二是雪坡北面有另一条路没画出来。两种说法都缺画面证据，目前只能算推测。</p>
+
+          <h3>“错位”是不是叙事设计</h3>
+          <p>对比第二封的处理方式，能看出一些规律。第二封第五张图里，邮差的手套左右戴反了，作者在10月12日的加笔说明中承认是画的时候没注意，后来补画了磨损细节但没有改正左右。这说明系列里确实存在无意的错误。第三封的雪坡错位是否属于同一类，作者还没有正面回答。</p>
+          <ul>
+            <li>已公开事实：第四张与第七张的地形标记方向相反，溪谷没有桥。</li>
+            <li>当事人回应：11月6日附言只说“绕了路”，未说明路线。</li>
+            <li>媒体转述：暂无外部媒体报道，讨论集中在作品评论区。</li>
+            <li>网友推测：有人猜北面有暗路，有人猜是画反了，均无画面支撑。</li>
+          </ul>
+
+          <h3>判断依据拆成可核对项</h3>
+          <p>要判断一个连续画面系列的“错位”是设计还是失误，可以按下面几项核对，而不是凭感觉：</p>
+          <ul>
+            <li><strong>地形标记是否前后一致</strong>——第三封编号标记的方向与溪谷走向矛盾，这一项没有通过。</li>
+            <li><strong>作者是否在附言里给出解释</strong>——只有一句“绕了路”，没有路线说明，这一项部分缺失。</li>
+            <li><strong>同一错误是否在系列里重复出现</strong>——第二封的手套左右问题属于同类，说明作者对左右方向类细节的检查偏松。</li>
+            <li><strong>后续是否修订</strong>——截至11月8日，第三封没有发布修订版。</li>
+          </ul>
+          <div class="callout">
+            <strong>可引用的判断：</strong>第三封的雪坡错位目前更接近“未经修订的绘制失误”，而不是“刻意留白”。依据是地形标记矛盾、附言未给解释、同类左右方向问题在第二封已出现过一次。如果后续修订版补出了北面路线，这个判断需要推翻。
+          </div>
+
+          <h3>植物细节为什么讨论得多</h3>
+          <p>溪流采集者手账里的越橘和岩高兰，叶片形态画得比一般插画细。10月19日那页的越橘叶缘锯齿数，有人放大数过，和《北欧植物图鉴》里的描述基本对得上。驯鹿苔的分枝角度则被指出偏大，作者在10月30日的更新里没有回应这一点。植物细节的准确度目前只集中在叶片和果实，地衣类还没做到同等程度。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2>按什么顺序看比较省时间</h2>
+        </div>
+        <div class="guide-panel">
+          <div class="guide-steps">
+            <div class="guide-step">
+              <h3>先看单幅场景</h3>
+              <p>从《白桦林晨雾》《苔原沼泽的黄昏》入手，两幅都不依赖前情。看完能判断自己吃不吃这套灰绿色调，再决定要不要进连续画面。</p>
+            </div>
+            <div class="guide-step">
+              <h3>再看角色三视图</h3>
+              <p>白桦林守夜人和苔藓小屋烘焙师的三视图附了道具分解。先看道具栏，能快速知道这个角色靠什么物件立住。</p>
+            </div>
+            <div class="guide-step">
+              <h3>连续画面放最后</h3>
+              <p>雪夜邮差系列共三封，按封序看。第三封的错位问题如果介意，可以等修订版；不介意就看画面氛围，七张图的雪地质感是系列里最完整的。</p>
+            </div>
+            <div class="guide-step">
+              <h3>手账页当补充</h3>
+              <p>溪流采集者的植物标本页信息密度高，适合单独放大看叶片和编号。编号规则还没出全，不必急着整理。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>常见问答</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>雪夜邮差系列一共几封？按什么顺序看？</summary>
+            <div class="answer">目前三封，按第一封、第二封、第三封的顺序看。第一封交代邮差和驯鹿的关系，第二封引入溪谷地形，第三封才出现雪坡折返。跳着看会漏掉溪谷走向的铺垫。</div>
+          </details>
+          <details class="faq-item">
+            <summary>苔藓小屋的室内图和外观图比例对不上，是画错了吗？</summary>
+            <div class="answer">10月15日的外观修订把门框改窄、屋顶苔藓调薄，之后室内图的家具比例仍未同步调整。作者在修订说明里只提到外观，没提室内。目前室内图的门洞宽度还是旧版尺寸，这一点在评论区被指出过两次。</div>
+          </details>
+          <details class="faq-item">
+            <summary>溪流采集者的植物编号规则是什么？</summary>
+            <div class="answer">10月30日更新后，编号前面加了字母前缀，越橘是 V 开头，岩高兰是 E 开头，驯鹿苔是 C 开头。字母后的数字顺序还没有公开说明，三页标本里数字不连续，可能跟采集日期有关，但没有确认。</div>
+          </details>
+          <details class="faq-item">
+            <summary>守夜人的围巾到底多长？三视图里不一样。</summary>
+            <div class="answer">11月4日的修订版统一了三视图里的围巾长度，按修订版标注是 2.4 米，绕两圈后垂到膝盖下方。旧版里正面图和侧面图差了一截，修订版补了一张长度标注线。</div>
+          </details>
+          <details class="faq-item">
+            <summary>越橘叶缘的锯齿数画对了吗？有人数过。</summary>
+            <div class="answer">10月19日那页的越橘叶缘锯齿，放大数大约每侧 12 到 14 个，和《北欧植物图鉴》里描述的 11 到 15 个区间基本重合。驯鹿苔的分枝角度偏大，目前没有对应的图鉴数据支撑，作者未回应。</div>
+          </details>
+          <details class="faq-item">
+            <summary>驯鹿在系列里是坐骑还是角色？</summary>
+            <div class="answer">是坐骑，但有独立设定图。第三封里驯鹿的雪地脚印比邮差的多画了两层，说明它有单独的行走路线。目前没有驯鹿的视角图，所有画面都跟着邮差走。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2>读者评论</h2>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card">
+            <div class="user"><span class="avatar">林</span><span class="nick">林间拾荒</span><span class="time">11-07</span></div>
+            <div class="text">第三封第四张和第七张的坡向真的对不上，我拿两张图叠了一下，溪谷位置差了一个身位。等修订。</div>
+            <div class="like">👍 42</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">北</span><span class="nick">北纬六十度</span><span class="time">11-06</span></div>
+            <div class="text">雪地质感这次画得厚，尤其是第五张的脚印深色，看着像真踩下去过。</div>
+            <div class="like">👍 31</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">苔</span><span class="nick">苔藓上瘾</span><span class="time">11-05</span></div>
+            <div class="text">苔藓小屋的茶杯纹样能不能单独出一组，烤盘那个刻字改了芬兰语之后顺眼多了。</div>
+            <div class="like">👍 18</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">越</span><span class="nick">越橘酱</span><span class="time">11-04</span></div>
+            <div class="text">越橘叶缘数了，13个，和图鉴对得上。驯鹿苔那个分枝角度确实大，看着像扫帚。</div>
+            <div class="like">👍 27</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">守</span><span class="nick">守夜人提灯</span><span class="time">11-03</span></div>
+            <div class="text">围巾修订版终于统一了，之前正面和侧面差一大截，看着难受。提灯内部结构图有点简，希望再细点。</div>
+            <div class="like">👍 15</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">灰</span><span class="nick">灰调爱好者</span><span class="time">11-02</span></div>
+            <div class="text">苔原沼泽那幅就是好看，闷得刚刚好。觉得灰的是没在阴天出过门吧。</div>
+            <div class="like">👍 22</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">手</span><span class="nick">手账翻页</span><span class="time">11-01</span></div>
+            <div class="text">采集者的编号前缀加了之后清楚不少，但数字顺序还是乱。等作者出规则说明。</div>
+            <div class="like">👍 9</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">驯</span><span class="nick">驯鹿不拉雪橇</span><span class="time">10-31</span></div>
+            <div class="text">驯鹿脚印比邮差多两层这个细节我注意到了，但没说驯鹿走哪条路，有点吊胃口。</div>
+            <div class="like">👍 13</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">白</span><span class="nick">白桦树皮</span><span class="time">10-29</span></div>
+            <div class="text">晨雾重扫版比旧版好，旧版雾是糊的，新版能看出远近两层。</div>
+            <div class="like">👍 11</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">溪</span><span class="nick">溪谷东侧</span><span class="time">10-27</span></div>
+            <div class="text">手套左右戴反那个第二封里就有，当时没人说，第三封才有人翻出来。作者检查确实松。</div>
+            <div class="like">👍 19</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">夜</span><span class="nick">极夜没睡</span><span class="time">10-25</span></div>
+            <div class="text">这系列颜色太舒服了，看多了别的亮色插画再回来，眼睛能歇会儿。</div>
+            <div class="like">👍 8</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">木</span><span class="nick">木屋烟囱</span><span class="time">10-23</span></div>
+            <div class="text">室内图那个门洞宽度还没改，外观改窄了，室内看着像大宅门。等作者想起来吧。</div>
+            <div class="like">👍 14</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">岩</span><span class="nick">岩高兰果</span><span class="time">10-22</span></div>
+            <div class="text">手账页的压花质感做得很好，像真的夹在书里压过。希望出整本。</div>
+            <div class="like">👍 6</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">风</span><span class="nick">风从北面来</span><span class="time">10-20</span></div>
+            <div class="text">第三封预告那张驯鹿剪影，我还以为收信人是守夜人，结果正片里没提收信人是谁。算个小失望。</div>
+            <div class="like">👍 10</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">雪</span><span class="nick">雪地折返</span><span class="time">10-18</span></div>
+            <div class="text">北面有暗路这个猜测我觉得站不住，前两张图把溪谷画得很清楚，没有岔路。</div>
+            <div class="like">👍 5</div>
+          </div>
+          <div class="comment-card">
+            <div class="user"><span class="avatar">灯</span><span class="nick">提灯油快没了</span><span class="time">10-16</span></div>
+            <div class="text">守夜人那个提灯分解图，灯芯部分只有两笔，太简了。别的道具画得挺细的，不知道为啥这个省了。</div>
+            <div class="like">👍 7</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2>作品相关动态</h2>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="date-box"><span class="d">06</span><span class="m">11月</span></div>
+            <div class="info">
+              <h3>雪夜邮差第三封发布，雪坡路线标注引讨论</h3>
+              <p>11月6日发布的七张图里，第四张与第七张的地形标记方向相反，评论区当天出现叠图对比，作者附言未解释路线。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="date-box"><span class="d">04</span><span class="m">11月</span></div>
+            <div class="info">
+              <h3>白桦林守夜人围巾统一为2.4米，三视图修订完成</h3>
+              <p>11月4日修订版补了长度标注线，旧版正面与侧面相差约0.6米，修订后提灯内部结构草稿同步附上。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="date-box"><span class="d">02</span><span class="m">11月</span></div>
+            <div class="info">
+              <h3>苔藓小屋茶杯纹样增加两张特写，烤盘刻字改芬兰语</h3>
+              <p>11月2日补充的器皿图里，烤盘上的刻字从自创符号改为芬兰语拼写，茶杯纹样与10月15日修订的外观门框纹路对齐。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="date-box"><span class="d">30</span><span class="m">10月</span></div>
+            <div class="info">
+              <h3>溪流采集者编号前缀公布：V、E、C 三类</h3>
+              <p>10月30日更新中，越橘标为 V 开头，岩高兰标为 E，驯鹿苔标为 C。数字顺序未说明，三页标本里数字不连续。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="date-box"><span class="d">25</span><span class="m">10月</span></div>
+            <div class="info">
+              <h3>苔原沼泽的黄昏配色说明：三层叠色，主色 #5a6b52</h3>
+              <p>10月25日作者贴出叠色色值，反光层为 #7e8f7a，最暗处 #3f4a3b。有读者反馈偏灰，作者回复原本就想要闷调。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="date-box"><span class="d">21</span><span class="m">10月</span></div>
+            <div class="info">
+              <h3>白桦林晨雾高清重扫，雾层保留多两档灰</h3>
+              <p>10月21日重扫版替换了旧图，旧版雾的远近层次丢失较多，新版在树干后方多保留了一层中灰过渡。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="related">
+        <div class="section-header">
+          <h2>相关推荐</h2>
+        </div>
+        <div class="related-tags">
+          <a href="/#featured">雪夜邮差·第二封</a>
+          <a href="/#featured">苔藓小屋门框修订对比</a>
+          <a href="/#featured">守夜人提灯结构图</a>
+          <a href="/#featured">溪流采集者编号页</a>
+          <a href="/#featured">白桦林晨雾重扫版</a>
+          <a href="/#featured">驯鹿脚印层次</a>
+          <a href="/#featured">越橘叶缘细节</a>
+          <a href="/#featured">苔原沼泽叠色说明</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充：创作时间线 + 投稿 -->
+      <section class="section" id="timeline">
+        <div class="section-header">
+          <h2>近一个月创作时间线</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-date">2026-11-06</div>
+            <div class="tl-title">雪夜邮差·第三封发布</div>
+            <div class="tl-desc">七张连续画面，雪坡折返段引发路线讨论。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-11-04</div>
+            <div class="tl-title">守夜人围巾修订</div>
+            <div class="tl-desc">三视图统一，补提灯内部草稿。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-11-02</div>
+            <div class="tl-title">苔藓小屋器皿补充</div>
+            <div class="tl-desc">茶杯纹样特写两张，烤盘刻字改芬兰语。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-10-30</div>
+            <div class="tl-title">采集者手账编号前缀公布</div>
+            <div class="tl-desc">V、E、C 三类前缀，数字顺序未说明。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-10-25</div>
+            <div class="tl-title">苔原沼泽配色说明</div>
+            <div class="tl-desc">三层叠色色值公开，主色 #5a6b52。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">2026-10-19</div>
+            <div class="tl-title">植物标本页发布</div>
+            <div class="tl-desc">越橘、岩高兰、驯鹿苔各一栏。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="submit">
+        <div class="section-header">
+          <h2>投稿与交流</h2>
+        </div>
+        <div class="overview-text" style="box-shadow: var(--shadow-default);">
+          <p>如果你也画北欧森林题材的角色或场景，可以把作品设定和创作说明发到投稿邮箱。格式不限，但请附上至少一张完整画面和角色道具说明。近期的同题投稿方向是“极夜里的灯”和“溪流边的采集工具”，已有三组投稿在评论区被讨论。</p>
+          <p>交流区目前集中在两个话题：雪夜邮差系列的路线标注，以及苔藓小屋室内外比例的修订。参与讨论不需要注册，直接在对应条目下留言即可。</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="aux-aside" aria-label="辅助信息">
+      <div class="aux-panel">
+        <h3>本周热榜</h3>
+        <ol class="hot-list">
+          <li><span class="rank">1</span><div class="info"><span class="t">雪夜邮差·第三封</span><span class="meta">11-06 · 热度 3.1k</span></div></li>
+          <li><span class="rank">2</span><div class="info"><span class="t">白桦林守夜人修订</span><span class="meta">11-04 · 热度 1.9k</span></div></li>
+          <li><span class="rank">3</span><div class="info"><span class="t">苔藓小屋器皿补充</span><span class="meta">11-02 · 热度 1.4k</span></div></li>
+          <li><span class="rank">4</span><div class="info"><span class="t">溪流采集者编号页</span><span class="meta">10-30 · 热度 1.1k</span></div></li>
+          <li><span class="rank">5</span><div class="info"><span class="t">苔原沼泽叠色说明</span><span class="meta">10-25 · 热度 0.8k</span></div></li>
+        </ol>
+      </div>
+      <div class="aux-panel">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          <a href="/#featured">雪夜邮差</a>
+          <a href="/#featured">苔藓小屋</a>
+          <a href="/#featured">守夜人</a>
+          <a href="/#featured">溪流采集者</a>
+          <a href="/#featured">越橘</a>
+          <a href="/#featured">驯鹿苔</a>
+          <a href="/#featured">白桦林</a>
+          <a href="/#featured">极夜插画</a>
+          <a href="/#featured">手账内页</a>
+          <a href="/#featured">角色三视图</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-row">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 4L20 13L16 28L12 13L16 4Z" fill="#D9E8C7"/>
+              <circle cx="16" cy="13" r="2.8" fill="#F2B84B"/>
+            </svg>
+          </span>
+          <span class="name">北欧精灵melody作品</span>
+        </div>
+        <p class="tagline">收录2026年9月至11月的场景插画、角色设定与连续画面故事。条目类型以单幅插画和设定图为主，连续画面占三成，更新节奏约为每周两到三组。</p>
+      </div>
+      <div class="footer-col">
+        <h4>作品分类</h4>
+        <ul>
+          <li><a href="/#featured">雪夜邮差系列</a></li>
+          <li><a href="/#featured">苔藓小屋设定</a></li>
+          <li><a href="/#featured">溪流采集者手账</a></li>
+          <li><a href="/#featured">白桦林角色</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>浏览入口</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#analysis">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#submit">投稿与交流</a></li>
+          <li><a href="/#comments">读者评论</a></li>
+          <li><a href="/#news">相关动态</a></li>
+          <li><a href="/#timeline">创作时间线</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容为示例条目，条目名称、日期与数据用于呈现作品聚合结构。</span>
+      <span>最近更新：2026-11-08</span>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      var menuToggle = document.getElementById('menuToggle');
+      var mainNav = document.getElementById('mainNav');
+      var mask = document.getElementById('mobileMask');
+      var backToTop = document.getElementById('backToTop');
+      var searchForm = document.getElementById('searchForm');
+      var searchInput = document.getElementById('searchInput');
+      var searchFeedback = document.getElementById('searchFeedback');
+
+      function closeMenu() {
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        mask.classList.remove('active');
+      }
+      function openMenu() {
+        mainNav.classList.add('open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        mask.classList.add('active');
+      }
+      menuToggle.addEventListener('click', function() {
+        if (mainNav.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+      });
+      mask.addEventListener('click', closeMenu);
+      mainNav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 860) { closeMenu(); }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { closeMenu(); }
+      });
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight * 0.8) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }, { passive: true });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索筛选：在精选作品卡片中筛选
+      var workCards = document.querySelectorAll('#featured .work-card');
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) {
+          searchFeedback.classList.remove('active');
+          workCards.forEach(function(c) { c.classList.remove('hidden-by-search'); });
+          return;
+        }
+        var count = 0;
+        workCards.forEach(function(card) {
+          var text = card.textContent.toLowerCase();
+          if (text.indexOf(q) !== -1) {
+            card.classList.remove('hidden-by-search');
+            count++;
+          } else {
+            card.classList.add('hidden-by-search');
+          }
+        });
+        searchFeedback.textContent = count > 0
+          ? '在精选作品中找到 ' + count + ' 个与「' + searchInput.value.trim() + '」相关的条目。'
+          : '没有找到与「' + searchInput.value.trim() + '」匹配的作品条目。试试“雪夜”“苔藓”“越橘”。';
+        searchFeedback.classList.add('active');
+      });
+
+      // 侧栏高亮
+      var sections = document.querySelectorAll('section[id]');
+      var channelLinks = document.querySelectorAll('.channel-index a');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.getAttribute('id');
+              channelLinks.forEach(function(link) {
+                link.classList.toggle('active', link.getAttribute('href') === '/#' + id);
+              });
+            }
+          });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(function(s) { obs.observe(s); });
+      }
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "北欧精灵melody作品",
+    "description": "汇集森林系插画、角色设定与短篇故事图集，包含白桦林精灵、苔藓小屋、雪夜邮差等具体条目。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "雪夜邮差系列一共几封？按什么顺序看？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "目前三封，按第一封、第二封、第三封的顺序看。第一封交代邮差和驯鹿的关系，第二封引入溪谷地形，第三封才出现雪坡折返。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "苔藓小屋的室内图和外观图比例对不上，是画错了吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10月15日的外观修订把门框改窄、屋顶苔藓调薄，之后室内图的家具比例仍未同步调整，室内图的门洞宽度还是旧版尺寸。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "溪流采集者的植物编号规则是什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10月30日更新后，编号前面加了字母前缀，越橘是 V 开头，岩高兰是 E 开头，驯鹿苔是 C 开头。字母后的数字顺序还没有公开说明。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "守夜人的围巾到底多长？三视图里不一样。",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "11月4日的修订版统一了三视图里的围巾长度，按修订版标注是 2.4 米，绕两圈后垂到膝盖下方。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "越橘叶缘的锯齿数画对了吗？有人数过。",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10月19日那页的越橘叶缘锯齿，放大数大约每侧 12 到 14 个，和《北欧植物图鉴》里描述的 11 到 15 个区间基本重合。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "驯鹿在系列里是坐骑还是角色？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "是坐骑，但有独立设定图。第三封里驯鹿的雪地脚印比邮差的多画了两层，说明它有单独的行走路线。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+          </html>
