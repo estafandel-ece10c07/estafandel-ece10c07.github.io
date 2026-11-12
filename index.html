@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑兽2动漫1到6集樱花动漫 - 分集剧情与角色解析</title>
+  <meta name="description" content="黑兽2动漫1到6集樱花动漫内容聚合，涵盖第1集到第6集分集剧情、角色关系与关键设定，适合追番观众和设定考据党查阅。">
+  <meta name="keywords" content="黑兽2动漫1到6集樱花动漫">
+  <style>
+    /* 全局色彩系统 */
+    :root {
+      --primary: #7a2e3a;
+      --primary-light: #a04552;
+      --primary-dark: #4e1d26;
+      --bg: #f9f6f2;
+      --text-primary: #1e1b1a;
+      --text-secondary: #5e5550;
+      --text-tertiary: #8b807b;
+      --border: #e2d9d2;
+      --card-bg: #ffffff;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --shadow-default: 0 2px 12px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --header-height: 110px;
+      --announce-height: 36px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--announce-height) + 60px);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-top: calc(var(--announce-height) + 60px);
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--announce-height);
+      background: var(--primary-dark);
+      color: #f0e7e3;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 0.85rem;
+      gap: 24px;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+
+    .announce-bar .brand-mini {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .announce-bar .announce-items {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+    }
+
+    .announce-bar .announce-items span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .announce-bar .badge {
+      background: var(--primary-light);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1px 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: fixed;
+      top: var(--announce-height);
+      left: 0;
+      right: 0;
+      z-index: 999;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo span {
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      margin-left: 12px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--primary-light);
+      color: #fff;
+      outline: none;
+    }
+
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      transition: border-color 0.2s;
+    }
+
+    .search-toggle:hover {
+      border-color: var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--text-primary);
+      padding: 4px;
+      line-height: 1;
+    }
+
+    /* 搜索浮层 */
+    .search-overlay {
+      display: none;
+      position: fixed;
+      top: calc(var(--announce-height) + 60px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 2px solid var(--primary);
+      padding: 16px 24px;
+      z-index: 998;
+      box-shadow: var(--shadow-default);
+    }
+
+    .search-overlay.active {
+      display: block;
+    }
+
+    .search-overlay input {
+      width: 100%;
+      max-width: 600px;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .search-overlay input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-overlay .search-feedback {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+
+    /* 容器 */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 首屏 */
+    .hero {
+      margin-top: 24px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      border-radius: var(--radius-card);
+      padding: 48px 40px 40px;
+      color: #f5ede9;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .hero .hero-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 600px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions a {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 32px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hero-actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-primary {
+      background: #f5ede9;
+      color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      color: #fff;
+    }
+
+    .hero-visual {
+      flex: 0 0 300px;
+      height: 200px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 三栏门户布局 */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      margin-top: 32px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-sidebar {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 20px 12px;
+      box-shadow: var(--shadow-default);
+      position: sticky;
+      top: calc(var(--announce-height) + 80px);
+    }
+
+    .channel-sidebar h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      padding: 0 12px 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    .channel-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-nav a {
+      padding: 8px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .channel-nav a:hover,
+    .channel-nav a:focus-visible {
+      background: #f0e7e3;
+      color: var(--primary-dark);
+      outline: none;
+    }
+
+    .channel-nav a .ch-icon {
+      font-size: 1.1rem;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      min-width: 0;
+    }
+
+    /* 右辅助栏 */
+    .aux-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: calc(var(--announce-height) + 80px);
+    }
+
+    .aux-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .aux-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .aux-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .aux-list li {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+      display: flex;
+      gap: 8px;
+    }
+
+    .aux-list .rank {
+      font-weight: 700;
+      color: var(--primary);
+      min-width: 20px;
+    }
+
+    .aux-list .aux-title {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .aux-list .aux-meta {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* 板块通用 */
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.3px;
+    }
+
+    .section-header .sub {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+    }
+
+    /* 领域概览 */
+    .overview-text {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-default);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+
+    .overview-text p {
+      margin-bottom: 12px;
+    }
+
+    .overview-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      background: #e8dfd9;
+    }
+
+    .card-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-type {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      background: #f5ede9;
+      border-radius: 12px;
+      padding: 2px 10px;
+      align-self: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: #f0e7e3;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .card-meta {
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: auto;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 4px 0;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-date {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      min-width: 70px;
+    }
+
+    .update-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    .update-summary {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .cat-link {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 16px 12px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-default);
+      transition: background 0.2s, transform 0.2s;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    .cat-link:hover {
+      background: var(--primary-light);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-default);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+
+    .deep-dive h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 24px 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      margin-bottom: 14px;
+    }
+
+    .deep-dive ul {
+      margin: 12px 0 16px 24px;
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+
+    /* 体验指南步骤 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .guide-step {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary-light);
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .step-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-primary);
+      transition: background 0.2s;
+    }
+
+    .faq-item summary:hover {
+      background: #fcf9f7;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 400;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .comment-item {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      gap: 12px;
+    }
+
+    .comment-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .comment-body {
+      flex: 1;
+    }
+
+    .comment-nick {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .comment-text {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .news-item {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .news-head {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+    }
+
+    .news-date {
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    .news-summary {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐标签索引 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-index a {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .tag-index a:hover {
+      background: var(--primary-light);
+      color: #fff;
+      border-color: var(--primary-light);
+    }
+
+    /* 榜单 */
+    .ranking-list {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 8px 0;
+      box-shadow: var(--shadow-default);
+    }
+
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .ranking-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--primary);
+      min-width: 28px;
+    }
+
+    .rank-title {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .rank-meta {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    /* 页尾 */
+    .site-footer {
+      margin-top: 48px;
+      background: var(--primary-dark);
+      color: #d9cec8;
+      padding: 40px 24px 24px;
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .footer-desc {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #c9bcb5;
+      text-decoration: none;
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.75rem;
+      opacity: 0.6;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+      box-shadow: var(--shadow-default);
+      z-index: 900;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      background: var(--primary-dark);
+    }
+
+    /* 移动端 */
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .main-nav {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+      .aux-sidebar {
+        position: static;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero {
+        padding: 28px 20px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+      .update-item {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 移动端抽屉 */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: calc(var(--announce-height) + 60px);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 997;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu-panel {
+      background: #fff;
+      width: 280px;
+      max-width: 80vw;
+      height: 100%;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .mobile-menu-panel h2 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .mobile-menu-panel a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .mobile-menu-panel a:hover {
+      background: #f0e7e3;
+    }
+
+    /* 工具 */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" aria-label="更新公告">
+    <span class="brand-mini">黑兽2动漫1到6集樱花动漫</span>
+    <div class="announce-items">
+      <span><span class="badge">新增</span> 11月6日 第6集「堕落之宴」分集解析</span>
+      <span><span class="badge">更新</span> 11月5日 角色人气投票 前五名公布</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <a href="/" class="logo" aria-label="返回首页">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#7a2e3a"/>
+        <path d="M8 22L12 10L16 18L20 10L24 22" stroke="#f5ede9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="16" cy="24" r="1.5" fill="#f5ede9"/>
+      </svg>
+      <span>黑兽2动漫1到6集樱花动漫</span>
+    </a>
+    <nav class="main-nav" aria-label="主题导航">
+      <a href="/#overview">作品概览</a>
+      <a href="/#episodes">分集精选</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">观众评论</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-toggle" id="searchToggle" aria-label="打开搜索">搜索</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- 移动端菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <h2>导航</h2>
+      <a href="/#overview">作品概览</a>
+      <a href="/#episodes">分集精选</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#ranking">人气榜单</a>
+    </div>
+  </div>
+
+  <!-- 搜索浮层 -->
+  <div class="search-overlay" id="searchOverlay">
+    <input type="search" id="searchInput" placeholder="搜索分集、角色、标签…" aria-label="搜索站内内容">
+    <div class="search-feedback" id="searchFeedback"></div>
+  </div>
+
+  <div class="container">
+    <!-- 首屏 -->
+    <section class="hero" aria-label="主题首屏">
+      <div class="hero-content">
+        <h1>黑兽2动漫1到6集樱花动漫</h1>
+        <p class="hero-desc">
+          汇集《黑兽2》第1集到第6集的分集剧情梳理、角色关系图谱与关键设定考据。从「黑骑士团的崩坏」到「被囚禁的圣骑士」，逐集拆解事件链条、人物动机与世界观伏笔，适合追番观众、设定党与二创作者查阅。
+        </p>
+        <div class="hero-actions">
+          <a href="/#episodes" class="btn-primary">浏览分集精选</a>
+          <a href="/#deep-dive" class="btn-outline">阅读深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="260" height="140" rx="12" fill="#4e1d26" opacity="0.4"/>
+          <rect x="35" y="45" width="230" height="110" rx="8" fill="#a04552" opacity="0.3"/>
+          <circle cx="150" cy="100" r="40" stroke="#f5ede9" stroke-width="2" opacity="0.6"/>
+          <path d="M130 90L150 70L170 90" stroke="#f5ede9" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+          <path d="M130 110L150 130L170 110" stroke="#f5ede9" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+          <line x1="150" y1="70" x2="150" y2="130" stroke="#f5ede9" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 三栏门户布局 -->
+    <div class="portal-layout">
+      <!-- 左频道索引 -->
+      <aside class="channel-sidebar" aria-label="频道索引">
+        <h2>频道索引</h2>
+        <nav class="channel-nav">
+          <a href="/#overview"><span class="ch-icon">▸</span>作品概览</a>
+          <a href="/#episodes"><span class="ch-icon">▸</span>分集精选</a>
+          <a href="/#updates"><span class="ch-icon">▸</span>更新动态</a>
+          <a href="/#categories"><span class="ch-icon">▸</span>分类索引</a>
+          <a href="/#deep-dive"><span class="ch-icon">▸</span>深度解析</a>
+          <a href="/#guide"><span class="ch-icon">▸</span>体验指南</a>
+          <a href="/#faq"><span class="ch-icon">▸</span>常见问答</a>
+          <a href="/#comments"><span class="ch-icon">▸</span>观众评论</a>
+          <a href="/#news"><span class="ch-icon">▸</span>相关资讯</a>
+          <a href="/#recommend"><span class="ch-icon">▸</span>相关推荐</a>
+          <a href="/#ranking"><span class="ch-icon">▸</span>人气榜单</a>
+        </nav>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="main-content">
+
+        <!-- 1. 主题领域概览 -->
+        <section id="overview" class="section">
+          <div class="section-header">
+            <h2>作品概览与内容方向</h2>
+            <span class="sub">2026年11月更新</span>
+          </div>
+          <div class="overview-text">
+            <p>《黑兽2》是黑兽系列的第二部动画作品，全6集，围绕黑骑士团与圣骑士势力之间的冲突展开。故事设定在架空大陆，核心冲突围绕“黑骑士团的复仇”与“圣骑士团的堕落”两条线索交织推进。第1集以黑骑士团残部突袭圣骑士驻地开场，第2集引入关键角色“暗影祭司”与“白狼骑士”，第3集通过一场审判戏揭露双方内部的分裂，第4至5集将视角转向被囚禁的圣骑士公主，第6集以一场宴席上的反转收束前六集的主要矛盾。</p>
+            <p>当前值得关注的具体内容方向包括：角色关系图谱（黑骑士团长与暗影祭司的旧日盟约）、关键设定考据（“黑兽之血”的三种激活条件）、分集叙事结构对比（第3集双线剪辑与第5集单线倒叙的差异），以及第6集宴席场景中“毒酒”与“契约”两个伏笔的回收方式。第4集片尾出现的古文字铭文在11月1日被观众逐帧比对，确认与第1集开场石碑上的文字属于同一套符文字母表。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section id="episodes" class="section">
+          <div class="section-header">
+            <h2>分集精选与关键条目</h2>
+            <span class="sub">第1集至第6集</span>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/heishou2ep1/400/300" width="400" height="300" loading="lazy" alt="黑兽2第1集黑骑士团突袭圣骑士驻地场景">
+              <div class="card-body">
+                <span class="card-type">第1集</span>
+                <h3 class="card-title">黑骑士团的夜袭</h3>
+                <p class="card-desc">开场18分钟的长镜头调度，从黑骑士团集结到突破圣骑士外城墙，用火光与铁蹄声建立压迫感。第7分钟出现的断剑特写是后续第5集回忆线的关键道具。</p>
+                <div class="card-tags"><span class="tag">突袭战</span><span class="tag">断剑伏笔</span><span class="tag">夜戏</span></div>
+                <div class="card-meta"><span>更新于11月2日</span><span>热度 9.2</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/heishou2ep2/400/300" width="400" height="300" loading="lazy" alt="黑兽2第2集暗影祭司与白狼骑士对峙画面">
+              <div class="card-body">
+                <span class="card-type">第2集</span>
+                <h3 class="card-title">暗影祭司的交易</h3>
+                <p class="card-desc">新角色暗影祭司在第2集第12分钟登场，用三枚铜币与白狼骑士交换情报。铜币上的兽纹与第6集宴席请柬封蜡图案一致，这条线索在11月4日被设定党整理成对照图。</p>
+                <div class="card-tags"><span class="tag">暗影祭司</span><span class="tag">白狼骑士</span><span class="tag">铜币线索</span></div>
+                <div class="card-meta"><span>更新于11月3日</span><span>热度 8.7</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/heishou2ep3/400/300" width="400" height="300" loading="lazy" alt="黑兽2第3集审判庭场景双线剪辑">
+              <div class="card-body">
+                <span class="card-type">第3集</span>
+                <h3 class="card-title">审判庭上的双线剪辑</h3>
+                <p class="card-desc">第3集将圣骑士内部审判与黑骑士团密会交叉剪辑，两条线在“宣判有罪”的槌声中同步收束。第22分钟审判长席位上出现的空椅，在第6集宴席主位得到呼应。</p>
+                <div class="card-tags"><span class="tag">审判戏</span><span class="tag">交叉剪辑</span><span class="tag">空椅伏笔</span></div>
+                <div class="card-meta"><span>更新于11月4日</span><span>热度 9.0</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/heishou2ep4/400/300" width="400" height="300" loading="lazy" alt="黑兽2第4集囚禁圣骑士公主的塔楼场景">
+              <div class="card-body">
+                <span class="card-type">第4集</span>
+                <h3 class="card-title">高塔中的圣骑士公主</h3>
+                <p class="card-desc">视角转向被囚禁的圣骑士公主，第4集几乎全程在塔楼内完成。片尾古文字铭文被观众逐帧比对，与第1集开场石碑文字属于同一套符文字母表，11月1日已有完整对照表流出。</p>
+                <div class="card-tags"><span class="tag">囚禁线</span><span class="tag">古文字铭文</span><span class="tag">单场景</span></div>
+                <div class="card-meta"><span>更新于11月5日</span><span>热度 8.4</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/heishou2ep5/400/300" width="400" height="300" loading="lazy" alt="黑兽2第5集回忆线黑骑士团长少年时期">
+              <div class="card-body">
+                <span class="card-type">第5集</span>
+                <h3 class="card-title">回忆线：黑骑士的誓言</h3>
+                <p class="card-desc">全篇唯一的倒叙单集，用23分钟交代黑骑士团长与暗影祭司的旧日盟约。第14分钟出现的断剑与第1集第7分钟特写是同一把，剑柄缠布颜色在回忆中为白色、正片为黑色，这个差异在11月6日被截图对比讨论。</p>
+                <div class="card-tags"><span class="tag">倒叙</span><span class="tag">盟约起源</span><span class="tag">断剑对比</span></div>
+                <div class="card-meta"><span>更新于11月6日</span><span>热度 8.8</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/heishou2ep6/400/300" width="400" height="300" loading="lazy" alt="黑兽2第6集宴席场景毒酒与契约反转">
+              <div class="card-body">
+                <span class="card-type">第6集</span>
+                <h3 class="card-title">宴席上的毒酒与契约</h3>
+                <p class="card-desc">第6集以一场宴席收束前六集矛盾。第9分钟毒酒递出、第17分钟契约书展开，两个动作在同一个长镜头内完成，中间插入的空镜（烛台燃烧）时长精确为6秒，被观众视为导演留给“选择”的思考时间。</p>
+                <div class="card-tags"><span class="tag">宴席反转</span><span class="tag">毒酒</span><span class="tag">契约书</span></div>
+                <div class="card-meta"><span>更新于11月7日</span><span>热度 9.5</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section id="updates" class="section">
+          <div class="section-header">
+            <h2>更新动态与分集进度</h2>
+            <span class="sub">11月1日—11月8日</span>
+          </div>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="update-date">11月8日</span>
+              <div><span class="update-title">第6集宴席场景分镜逐格拆解</span><div class="update-summary">烛台燃烧6秒空镜被标注为“选择窗口”，毒酒与契约书在同一长镜头内完成递出与展开。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月7日</span>
+              <div><span class="update-title">第5集断剑剑柄缠布颜色对比图发布</span><div class="update-summary">回忆线白色缠布与正片黑色缠布截图并置，11月6日讨论帖已积累47条回复。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月6日</span>
+              <div><span class="update-title">角色人气投票前五名公布</span><div class="update-summary">暗影祭司以312票居首，白狼骑士278票次之，圣骑士公主216票第三，黑骑士团长194票第四。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月5日</span>
+              <div><span class="update-title">第4集古文字铭文对照表完成</span><div class="update-summary">21个符文与第1集石碑文字逐一对应，制表者标注了其中3个存在争议的字符。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月4日</span>
+              <div><span class="update-title">第3集空椅线索被关联到第6集主位</span><div class="update-summary">审判长席位空椅在第6集宴席中由暗影祭司落座，时间跨度3集。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月3日</span>
+              <div><span class="update-title">第2集铜币兽纹与第6集请柬封蜡对照整理</span><div class="update-summary">三枚铜币的兽纹分别为狼、蛇、鹰，请柬封蜡图案为三兽环抱，组合方式在11月3日帖子中首度公开。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月2日</span>
+              <div><span class="update-title">第1集断剑特写帧数定位</span><div class="update-summary">第7分23秒至第7分26秒为断剑特写，共72帧，剑柄缠布可见黑色。</div></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11月1日</span>
+              <div><span class="update-title">第4集铭文与第1集石碑比对启动</span><div class="update-summary">初始比对在11月1日20时左右开始，首批12个字符匹配结果于当晚发布。</div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section id="categories" class="section">
+          <div class="section-header">
+            <h2>分类索引</h2>
+            <span class="sub">按内容类型筛选</span>
+          </div>
+          <div class="category-grid">
+            <a href="/#episodes" class="cat-link">分集剧情</a>
+            <a href="/#deep-dive" class="cat-link">角色关系</a>
+            <a href="/#deep-dive" class="cat-link">设定考据</a>
+            <a href="/#updates" class="cat-link">伏笔对照</a>
+            <a href="/#ranking" class="cat-link">人气投票</a>
+            <a href="/#comments" class="cat-link">观众短评</a>
+            <a href="/#news" class="cat-link">制作动态</a>
+            <a href="/#recommend" class="cat-link">同系列作品</a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section id="deep-dive" class="section">
+          <div class="section-header">
+            <h2>深度解析：叙事结构与伏笔回收</h2>
+            <span class="sub">第1集至第6集</span>
+          </div>
+          <div class="deep-dive">
+            <h3>双线剪辑的代价：第3集审判戏为什么比第6集宴席更“碎”</h3>
+            <p>第3集将圣骑士内部审判与黑骑士团密会交叉剪辑，两条线在“宣判有罪”的槌声中同步收束。从11月4日流出的分镜稿看，审判线共14个镜头、密会线11个镜头，平均单镜头时长分别为9.3秒和11.7秒。第6集宴席场景则用了单线长镜头，毒酒递出到契约书展开的连续画面长达2分18秒，中间只插入一个6秒的烛台空镜。</p>
+            <p>两种剪辑策略的差异直接影响了伏笔的密度：第3集在25分钟内埋下“空椅”“铜币”“断剑”三处线索，平均每8.3分钟一处；第6集在22分钟内只回收了“毒酒”“契约”“空椅落座”三处，但回收间隔更短，集中在最后8分钟。一个可被反驳的判断是：第3集的碎片化并非叙事炫技，而是为了在有限时长内同时交代两个阵营的决策过程，代价是观众需要在11月4日对照帖的帮助下才能把“空椅”与第6集主位联系起来。如果只看一遍正片，这条线索的识别率会低于三成。</p>
+
+            <h3>“黑兽之血”激活条件：三次出现、两种说法</h3>
+            <p>第1集石碑铭文、第4集塔楼古文字、第5集回忆线仪式场景，三次涉及“黑兽之血”的激活条件。第1集石碑上可见的条件为“月缺之夜、兽骨为引、血亲之证”三项；第4集塔楼铭文多出一行“心志溃散者不可得”，变为四项；第5集回忆线中暗影祭司口述的版本则删去“血亲之证”，替换为“盟约之印”。</p>
+            <ul>
+              <li>第1集石碑：三项条件，字体为古符文字母表A组。</li>
+              <li>第4集塔楼：四项条件，多出“心志溃散者不可得”，字体为A组变体。</li>
+              <li>第5集回忆线：三项条件，用“盟约之印”替换“血亲之证”，口述时背景中出现铜币特写。</li>
+            </ul>
+            <p>11月1日完成的对照表显示，三处文本的差异集中在第三项条件上。第6集宴席中契约书上的火漆印恰好是“盟约之印”的图形化呈现。这条线索的回收方式不是通过台词解释，而是让道具自己出现。如果观众没有在第5集注意到口述与石碑的差异，第6集火漆印就只是一个装饰纹样。</p>
+
+            <h3>断剑的颜色变化：一个可以核对的细节链</h3>
+            <p>断剑在第1集第7分23秒首次出现，剑柄缠布为黑色。第5集回忆线第14分钟出现同一把剑，缠布为白色。第6集宴席场景中，断剑被放置在主位右侧的武器架上，缠布颜色在灯光下呈深灰。11月6日的截图对比帖将三个时间点的剑柄颜色并置，结论是：缠布颜色变化对应黑骑士团长在不同阶段的状态——白色为盟约初立，黑色为盟约破裂后，深灰则处于两者之间。</p>
+            <p>这个细节链的可核对性在于：三处镜头中剑柄的磨损位置完全一致，都在护手下方2厘米处。如果制作组只是随手换色，磨损位置不会保持连贯。11月7日有观众提出反论，认为深灰色可能是宴席场景的灯光染色所致，并非刻意设定。目前两种说法都有截图支撑，但缺少制作方访谈的佐证。</p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section id="guide" class="section">
+          <div class="section-header">
+            <h2>观看顺序与判断依据</h2>
+            <span class="sub">从第1集到第6集</span>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <div class="step-num">01</div>
+              <div class="step-content">
+                <h3>先看第1集和第2集，建立阵营认知</h3>
+                <p>第1集用夜袭战交代黑骑士团的行动逻辑，第2集用铜币交易引入暗影祭司的中间人身份。两集连看能理解“谁在跟谁交易、谁在打谁”，跳过第2集直接看第3集审判戏会丢失铜币这条线索的起点。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">02</div>
+              <div class="step-content">
+                <h3>第3集和第4集可以调换顺序</h3>
+                <p>第3集审判线与第4集囚禁线在时间上平行，先看哪一集不影响理解主线。区别在于：先看第3集会先获得“空椅”信息，先看第4集会先获得“铭文”信息。两条信息在第6集汇合，顺序不同只影响伏笔的发现节奏。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">03</div>
+              <div class="step-content">
+                <h3>第5集放在第6集之前，不要跳</h3>
+                <p>第5集回忆线解释了“盟约之印”的来源，第6集契约书上的火漆印直接依赖这个信息。跳过第5集，第6集宴席上的契约书就只是一张纸；看过第5集，才能认出火漆印与暗影祭司口述的图案一致。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">04</div>
+              <div class="step-content">
+                <h3>判断一个条目值不值得细看：盯道具和台词差异</h3>
+                <p>《黑兽2》前六集的伏笔大多藏在道具重复出现时的细节变化里。断剑缠布颜色、铜币兽纹组合、空椅的落座者，这三类道具在三次以上出现时若有差异，差异本身就是信息。台词方面，同一句话在不同角色口中出现时，语序或称谓的变化值得暂停比对。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="section">
+          <div class="section-header">
+            <h2>常见问答</h2>
+            <span class="sub">关于分集与设定</span>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>第6集宴席上的毒酒到底有没有被喝下去？</summary>
+              <div class="faq-answer">第6集第9分钟毒酒被递到圣骑士公主面前，第17分钟契约书展开时酒杯仍在桌上，液面高度没有变化。第18分42秒有一个特写显示杯沿有唇印，但镜头随即切到契约书火漆印，没有给出饮酒动作。目前可以确认的是：酒杯位置从桌子左侧移到了右侧，唇印出现在靠近杯口的位置。喝没喝没有直接镜头，但杯沿唇印与液面未降同时存在，两种可能性都留了余地。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第4集塔楼铭文上的“心志溃散者不可得”是谁写的？</summary>
+              <div class="faq-answer">从字体看，第4集铭文与第1集石碑属于同一套符文字母表，但第4集多出的这一行字迹更细，笔画转折处有工具差异。11月5日对照表制作者指出，这一行字的刻痕深度比前几行浅约三分之一，可能是后来补刻的。补刻者身份在第5集回忆线中没有明确，暗影祭司口述时也没有提到这一条。目前能确认的只有补刻痕迹，作者身份仍是空白。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第3集审判长席位的空椅为什么在第6集由暗影祭司落座？</summary>
+              <div class="faq-answer">第3集第22分钟审判长宣布判决后离开席位，椅子空置到该集结束。第6集宴席主位在暗影祭司入场前同样空置，直到第11分钟暗影祭司落座。两处空椅的共同点是：空置期间都有其他角色经过但未入座。11月4日的关联帖认为，审判长与暗影祭司可能是同一阵营在不同场合的代表，但第6集暗影祭司落座后没有出示审判长身份凭证，这个推断缺少直接证据。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第5集断剑缠布颜色和第1集不一样，是制作失误吗？</summary>
+              <div class="faq-answer">第1集第7分23秒断剑缠布为黑色，第5集第14分钟同一把剑缠布为白色。三处镜头的剑柄磨损位置完全一致，都在护手下方2厘米处，说明是同一把道具剑。缠布颜色差异更可能是刻意设定：白色对应回忆线中盟约初立的时间点，黑色对应正片中断裂后的状态。11月6日对比帖列出了三次出现的时间码，但没有制作方说明，所以“刻意”仍是推断。</div>
+            </details>
+            <details class="faq-item">
+              <summary>白狼骑士在第2集拿到的三枚铜币后来去哪了？</summary>
+              <div class="faq-answer">第2集第12分钟暗影祭司将三枚铜币交给白狼骑士，铜币上的兽纹分别为狼、蛇、鹰。第6集宴席请柬封蜡图案为三兽环抱，与铜币兽纹组合一致。铜币本身在第3至5集没有出现，第6集也没有直接展示三枚铜币。11月3日的对照帖推测铜币被熔铸进了请柬封蜡，但这个说法没有画面证据，只能确认兽纹组合的对应关系。</div>
+            </details>
+            <details class="faq-item">
+              <summary>只看第6集能不能看懂宴席上的反转？</summary>
+              <div class="faq-answer">第6集宴席场景的台词不依赖前五集也能理解字面意思：毒酒递出、契约书展开、火漆印出现。但反转的信息量来自道具的前后对应——火漆印上的三兽环抱图案在第2集铜币、第5集暗影祭司口述中都出现过，空椅在第3集审判庭也出现过。没看过前五集，这些道具就只是宴席上的普通摆设，反转的“原来如此”感会弱很多。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section id="comments" class="section">
+          <div class="section-header">
+            <h2>观众评论</h2>
+            <span class="sub">11月1日—11月8日</span>
+          </div>
+          <div class="comment-list">
+            <div class="comment-item"><div class="comment-avatar">夜</div><div class="comment-body"><div class="comment-nick">夜行灯</div><div class="comment-text">第5集断剑缠布变白那个点，我第一遍完全没注意到，看了截图对比才反应过来。磨损位置一样这个细节确实服气。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">铜</div><div class="comment-body"><div class="comment-nick">铜币收藏家</div><div class="comment-text">三枚铜币的兽纹组合和请柬封蜡一模一样，11月3日那个帖子整理得挺清楚的。不过铜币到底熔没熔，我觉得没证据，别硬猜。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">空</div><div class="comment-body"><div class="comment-nick">空椅不空</div><div class="comment-text">审判长椅子空了三集，第6集暗影祭司坐上去的时候我直接拍桌子。但说实话审判长和暗影祭司是不是一个人，我持保留意见。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">白</div><div class="comment-body"><div class="comment-nick">白狼骑士团</div><div class="comment-text">第2集节奏有点慢，铜币交易那段对话来回切了七八个镜头，看得有点犯困。第3集审判戏节奏好很多。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">烛</div><div class="comment-body"><div class="comment-nick">烛台六秒</div><div class="comment-text">宴席那个6秒烛台空镜我数了三遍，每遍都是6秒整。导演是真的卡着秒表剪的吧。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">公</div><div class="comment-body"><div class="comment-nick">公主塔楼</div><div class="comment-text">第4集全程在塔楼里，本来担心会闷，结果铭文特写一个接一个，暂停截图停不下来。就是字幕太小了，古文字看不清。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">暗</div><div class="comment-body"><div class="comment-nick">暗影祭司本祭</div><div class="comment-text">人气投票暗影祭司第一我没想到，还以为白狼骑士会赢。312票对278票，差距不大。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">断</div><div class="comment-body"><div class="comment-nick">断剑不提</div><div class="comment-text">第1集第7分23秒那个断剑特写，我当时以为是随便插的镜头，结果第5集直接给回忆线。埋得深。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">字</div><div class="comment-body"><div class="comment-nick">符文比对员</div><div class="comment-text">第4集铭文补刻痕迹那个分析挺细的，刻痕深浅确实不一样。但补刻者是谁，正片里一点线索都没给，有点吊胃口。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">酒</div><div class="comment-body"><div class="comment-nick">毒酒喝没喝</div><div class="comment-text">杯沿唇印有，液面没降，这不明摆着做样子吗。我觉得没喝，但导演故意不给镜头就是想让观众吵。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">剪</div><div class="comment-body"><div class="comment-nick">交叉剪辑</div><div class="comment-text">第3集审判线和密会线切来切去，第一遍看确实有点乱。11月4日那个分镜稿出来之后才捋清楚，两条线镜头数14比11。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">火</div><div class="comment-body"><div class="comment-nick">火漆印观察</div><div class="comment-text">第6集契约书火漆印放大的时候我对比了第5集暗影祭司口述的图案，三兽环抱，顺序狼蛇鹰。一致。这个细节做得好。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">月</div><div class="comment-body"><div class="comment-nick">月缺之夜</div><div class="comment-text">“黑兽之血”激活条件三处文本都不一样，石碑三项、塔楼四项、回忆线三项换一项。11月1日对照表出来之前我都没发现。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">路</div><div class="comment-body"><div class="comment-nick">路过观众</div><div class="comment-text">没看过前作直接看的第6集，宴席那场戏单看也挺有张力的，就是火漆印和空椅的梗完全没接到。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">帧</div><div class="comment-body"><div class="comment-nick">逐帧选手</div><div class="comment-text">第1集断剑特写72帧，第5集回忆线同一把剑给了48帧，帧数少但信息量更大，缠布颜色一变全都说得通了。</div></div></div>
+            <div class="comment-item"><div class="comment-avatar">评</div><div class="comment-body"><div class="comment-nick">评价不评</div><div class="comment-text">整体作画水准在平均线以上，第6集宴席的长镜头调度是全六集最好的。第2集铜币交易对话稍显拖沓，其他还好。</div></div></div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section id="news" class="section">
+          <div class="section-header">
+            <h2>相关资讯</h2>
+            <span class="sub">11月1日—11月8日</span>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-head"><span class="news-title">第6集分镜稿流出：宴席长镜头标注“6秒空镜为选择窗口”</span><span class="news-date">11月8日</span></div>
+              <p class="news-summary">流出的分镜稿在第6集第17分钟处标注“烛台空镜6秒，角色选择时间”，与正片帧数一致。分镜稿右下角有手写批注“毒酒线不解释”。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-head"><span class="news-title">角色人气投票结果：暗影祭司312票居首，白狼骑士278票</span><span class="news-date">11月6日</span></div>
+              <p class="news-summary">投票于11月1日至5日进行，共收到1432票。圣骑士公主216票第三，黑骑士团长194票第四，审判长87票第五。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-head"><span class="news-title">第5集断剑截图对比帖回复破47条，缠布颜色差异成焦点</span><span class="news-date">11月6日</span></div>
+              <p class="news-summary">帖子将第1集、第5集、第6集三处剑柄截图并置，指出磨损位置一致但缠布颜色分别为黑、白、深灰。有回复认为深灰是灯光染色。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-head"><span class="news-title">第4集古文字铭文对照表完成：21个符文与第1集石碑逐一对应</span><span class="news-date">11月5日</span></div>
+              <p class="news-summary">制表者标注了3个存在争议的字符，其中“心志溃散者不可得”所在行的刻痕深度比前几行浅约三分之一。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-head"><span class="news-title">第3集空椅线索关联帖：审判长席位与第6集主位空置时段重合</span><span class="news-date">11月4日</span></div>
+              <p class="news-summary">帖子列出两处空椅出现的具体时间码：第3集第22分10秒至24分30秒，第6集第0分至11分。空置期间均有其他角色经过但未入座。</p>
+            </div>
+            <div class="news-item">
+              <div class="news-head"><span class="news-title">第2集铜币兽纹与请柬封蜡对照图发布：狼蛇鹰三兽环抱</span><span class="news-date">11月3日</span></div>
+              <p class="news-summary">对照图显示三枚铜币兽纹分别为狼、蛇、鹰，请柬封蜡为三兽环抱。发帖者注明“铜币是否熔铸无画面证据，仅确认兽纹组合对应”。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section id="recommend" class="section">
+          <div class="section-header">
+            <h2>相关推荐</h2>
+            <span class="sub">具体内容方向与条目</span>
+          </div>
+          <div class="tag-index">
+            <a href="/#deep-dive">黑兽之血三处文本差异</a>
+            <a href="/#episodes">第3集审判庭空椅</a>
+            <a href="/#episodes">第5集断剑缠布颜色</a>
+            <a href="/#episodes">第6集宴席毒酒与契约</a>
+            <a href="/#deep-dive">暗影祭司与审判长身份关联</a>
+            <a href="/#episodes">白狼骑士铜币去向</a>
+            <a href="/#deep-dive">符文字母表A组与变体</a>
+            <a href="/#updates">第4集补刻铭文刻痕深度</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：人气榜单 -->
+        <section id="ranking" class="section">
+          <div class="section-header">
+            <h2>角色人气榜单</h2>
+            <span class="sub">11月1日—11月5日投票结果</span>
+          </div>
+          <div class="ranking-list">
+            <div class="ranking-item"><span class="rank-num">1</span><span class="rank-title">暗影祭司</span><span class="rank-meta">312票 · 第2集登场</span></div>
+            <div class="ranking-item"><span class="rank-num">2</span><span class="rank-title">白狼骑士</span><span class="rank-meta">278票 · 第2集登场</span></div>
+            <div class="ranking-item"><span class="rank-num">3</span><span class="rank-title">圣骑士公主</span><span class="rank-meta">216票 · 第4集登场</span></div>
+            <div class="ranking-item"><span class="rank-num">4</span><span class="rank-title">黑骑士团长</span><span class="rank-meta">194票 · 第1集登场</span></div>
+            <div class="ranking-item"><span class="rank-num">5</span><span class="rank-title">审判长</span><span class="rank-meta">87票 · 第3集登场</span></div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="aux-sidebar" aria-label="辅助信息">
+        <div class="aux-card">
+          <h3>分集热度榜</h3>
+          <ul class="aux-list">
+            <li><span class="rank">1</span><div><span class="aux-title">第6集 宴席反转</span><span class="aux-meta">热度 9.5</span></div></li>
+            <li><span class="rank">2</span><div><span class="aux-title">第1集 黑骑士夜袭</span><span class="aux-meta">热度 9.2</span></div></li>
+            <li><span class="rank">3</span><div><span class="aux-title">第3集 审判庭双线</span><span class="aux-meta">热度 9.0</span></div></li>
+            <li><span class="rank">4</span><div><span class="aux-title">第5集 回忆线</span><span class="aux-meta">热度 8.8</span></div></li>
+            <li><span class="rank">5</span><div><span class="aux-title">第2集 铜币交易</span><span class="aux-meta">热度 8.7</span></div></li>
+          </ul>
+        </div>
+        <div class="aux-card">
+          <h3>最新更新</h3>
+          <ul class="aux-list">
+            <li><span class="rank">·</span><div><span class="aux-title">第6集分镜逐格拆解</span><span class="aux-meta">11月8日</span></div></li>
+            <li><span class="rank">·</span><div><span class="aux-title">断剑缠布对比图</span><span class="aux-meta">11月7日</span></div></li>
+            <li><span class="rank">·</span><div><span class="aux-title">人气投票结果公布</span><span class="aux-meta">11月6日</span></div></li>
+            <li><span class="rank">·</span><div><span class="aux-title">铭文对照表完成</span><span class="aux-meta">11月5日</span></div></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">黑兽2动漫1到6集樱花动漫</div>
+        <p class="footer-desc">覆盖《黑兽2》第1集至第6集的分集剧情、伏笔对照与角色关系梳理。条目类型包括分集解析、道具时间线、观众投票与制作动态，更新节奏跟随剧情讨论热度，11月1日至8日已收录12条可核对的细节线索。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容</h4>
+        <a href="/#overview">作品概览</a>
+        <a href="/#episodes">分集精选</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#deep-dive">深度解析</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="/#comments">观众评论</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#ranking">人气榜单</a>
+      </div>
+      <div class="footer-col">
+        <h4>分类</h4>
+        <a href="/#categories">分类索引</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#guide">体验指南</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容为示例条目，用于展示内容聚合结构。事实性表述以正文标注的具体来源与日期为准。</span>
+      <span>更新于2026年11月8日</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 搜索
+      var searchToggle = document.getElementById('searchToggle');
+      var searchOverlay = document.getElementById('searchOverlay');
+      var searchInput = document.getElementById('searchInput');
+      var searchFeedback = document.getElementById('searchFeedback');
+
+      searchToggle.addEventListener('click', function() {
+        searchOverlay.classList.toggle('active');
+        if (searchOverlay.classList.contains('active')) {
+          searchInput.focus();
+        }
+      });
+
+      searchInput.addEventListener('input', function() {
+        var q = this.value.trim().toLowerCase();
+        if (!q) {
+          searchFeedback.textContent = '';
+          return;
+        }
+        var text = document.body.innerText.toLowerCase();
+        if (text.includes(q)) {
+          searchFeedback.textContent = '含“' + this.value + '”的内容已高亮显示在页面中。';
+        } else {
+          searchFeedback.textContent = '未找到与“' + this.value + '”匹配的内容，请尝试其他关键词。';
+        }
+      });
+
+      // 点击页外关闭搜索
+      document.addEventListener('click', function(e) {
+        if (!searchOverlay.contains(e.target) && e.target !== searchToggle) {
+          searchOverlay.classList.remove('active');
+        }
+      });
+
+      // 移动端菜单
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobilePanel = mobileMenu.querySelector('.mobile-menu-panel');
+
+      hamburger.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('active');
+      });
+
+      mobileMenu.addEventListener('click', function(e) {
+        if (!mobilePanel.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      mobilePanel.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // ESC关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          searchOverlay.classList.remove('active');
+        }
+      });
+
+      // 回到顶部
+      var backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "黑兽2动漫1到6集樱花动漫",
+    "description": "黑兽2动漫1到6集樱花动漫内容聚合，涵盖第1集到第6集分集剧情、角色关系与关键设定，适合追番观众和设定考据党查阅。",
+    "about": {
+      "@type": "CreativeWork",
+      "name": "黑兽2"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "第6集宴席上的毒酒到底有没有被喝下去？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第6集第9分钟毒酒被递到圣骑士公主面前，第17分钟契约书展开时酒杯仍在桌上，液面高度没有变化。第18分42秒有一个特写显示杯沿有唇印，但镜头随即切到契约书火漆印，没有给出饮酒动作。目前可以确认的是：酒杯位置从桌子左侧移到了右侧，唇印出现在靠近杯口的位置。喝没喝没有直接镜头，但杯沿唇印与液面未降同时存在，两种可能性都留了余地。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "第4集塔楼铭文上的“心志溃散者不可得”是谁写的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "从字体看，第4集铭文与第1集石碑属于同一套符文字母表，但第4集多出的这一行字迹更细，笔画转折处有工具差异。11月5日对照表制作者指出，这一行字的刻痕深度比前几行浅约三分之一，可能是后来补刻的。补刻者身份在第5集回忆线中没有明确，暗影祭司口述时也没有提到这一条。目前能确认的只有补刻痕迹，作者身份仍是空白。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "第3集审判长席位的空椅为什么在第6集由暗影祭司落座？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第3集第22分钟审判长宣布判决后离开席位，椅子空置到该集结束。第6集宴席主位在暗影祭司入场前同样空置，直到第11分钟暗影祭司落座。两处空椅的共同点是：空置期间都有其他角色经过但未入座。11月4日的关联帖认为，审判长与暗影祭司可能是同一阵营在不同场合的代表，但第6集暗影祭司落座后没有出示审判长身份凭证，这个推断缺少直接证据。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "第5集断剑缠布颜色和第1集不一样，是制作失误吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第1集第7分23秒断剑缠布为黑色，第5集第14分钟同一把剑缠布为白色。三处镜头的剑柄磨损位置完全一致，都在护手下方2厘米处，说明是同一把道具剑。缠布颜色差异更可能是刻意设定：白色对应回忆线中盟约初立的时间点，黑色对应正片中断裂后的状态。11月6日对比帖列出了三次出现的时间码，但没有制作方说明，所以“刻意”仍是推断。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "白狼骑士在第2集拿到的三枚铜币后来去哪了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第2集第12分钟暗影祭司将三枚铜币交给白狼骑士，铜币上的兽纹分别为狼、蛇、鹰。第6集宴席请柬封蜡图案为三兽环抱，与铜币兽纹组合一致。铜币本身在第3至5集没有出现，第6集也没有直接展示三枚铜币。11月3日的对照帖推测铜币被熔铸进了请柬封蜡，但这个说法没有画面证据，只能确认兽纹组合的对应关系。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "只看第6集能不能看懂宴席上的反转？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第6集宴席场景的台词不依赖前五集也能理解字面意思：毒酒递出、契约书展开、火漆印出现。但反转的信息量来自道具的前后对应——火漆印上的三兽环抱图案在第2集铜币、第5集暗影祭司口述中都出现过，空椅在第3集审判庭也出现过。没看过前五集，这些道具就只是宴席上的普通摆设，反转的“原来如此”感会弱很多。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+  </html>
