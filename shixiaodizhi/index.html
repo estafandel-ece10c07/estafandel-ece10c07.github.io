@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>失效地址7086 - 历史地址存档与追踪</title>
+  <meta name="description" content="失效地址7086是一个专注于历史地址存档与追踪的档案库，汇集了7086个已失效或变更的地址条目、深度解析其变迁逻辑、社区用户提交的线索与评论，适合城市研究者、档案管理员及对地址变迁感兴趣的人查阅。">
+  <meta name="keywords" content="失效地址7086">
+  <style>
+    :root {
+      --primary: #1e3a5f;
+      --primary-light: #3b5a7a;
+      --primary-dark: #0f1f30;
+      --bg: #fafbfc;
+      --text-primary: #1a1e24;
+      --text-secondary: #5a6577;
+      --text-tertiary: #8b95a5;
+      --border: #e2e6ec;
+      --card-radius: 12px;
+      --tag-radius: 20px;
+      --shadow-default: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --sticky-offset: 104px;
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-padding-top: var(--sticky-offset);
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* 吸顶公告条 */
+    .announcement-bar {
+      background-color: var(--primary-dark);
+      color: #e8edf2;
+      font-size: 13px;
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      line-height: 1.5;
+    }
+
+    .announcement-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 24px;
+    }
+
+    .announcement-bar .brand-mark {
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .announcement-bar .announce-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .announcement-bar .announce-date {
+      color: #a0b4c8;
+      font-weight: 500;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 36px;
+      z-index: 99;
+      padding: 10px 0;
+      transition: box-shadow 0.2s;
+    }
+
+    .site-header.scrolled {
+      box-shadow: var(--shadow-default);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .brand-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .main-nav a:hover {
+      background: var(--primary-light);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--primary-dark);
+      margin-left: auto;
+    }
+
+    .nav-toggle:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* 主布局：左侧单栏 */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      margin-top: 32px;
+      margin-bottom: 56px;
+      align-items: start;
+    }
+
+    .left-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      max-height: calc(100vh - var(--sticky-offset) - 32px);
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .channel-nav {
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      padding: 16px 0;
+      box-shadow: var(--shadow-default);
+    }
+
+    .channel-nav h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      padding: 0 18px 10px;
+      font-weight: 600;
+    }
+
+    .channel-nav ul {
+      list-style: none;
+    }
+
+    .channel-nav li a {
+      display: block;
+      padding: 8px 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .channel-nav li a:hover,
+    .channel-nav li a.active {
+      background: #f0f4f9;
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6e 50%, #1a2f47 100%);
+      border-radius: 16px;
+      padding: 48px 40px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero .hero-desc {
+      font-size: 16px;
+      color: #c8d6e5;
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      background: #e8edf2;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-stat .label {
+      font-size: 12px;
+      color: #a0b8cc;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-stat .value {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* 内容区块 */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .section-header .section-sub {
+      font-size: 14px;
+      color: var(--text-tertiary);
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-img {
+      aspect-ratio: 4 / 3;
+      background: #eef1f5;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .card-img img {
+      transform: scale(1.03);
+    }
+
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.4;
+      color: var(--primary-dark);
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--tag-radius);
+      background: #eef2f7;
+      color: var(--text-secondary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .tag-primary {
+      background: var(--primary-light);
+      color: #fff;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 10px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .card-meta .heat {
+      color: #c0392b;
+      font-weight: 600;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .compact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .compact-item:last-child {
+      border-bottom: none;
+    }
+
+    .compact-item .item-name {
+      font-weight: 600;
+      color: var(--primary-dark);
+      min-width: 180px;
+      flex-shrink: 0;
+    }
+
+    .compact-item .item-desc {
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .compact-item .item-date {
+      margin-left: auto;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .category-item:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-default);
+    }
+
+    .category-item .cat-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .category-item .cat-count {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      padding: 32px 36px;
+    }
+
+    .deep-dive h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 24px 0 10px;
+    }
+
+    .deep-dive h3:first-child {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-size: 14.5px;
+    }
+
+    .deep-dive ul {
+      margin: 8px 0 16px 20px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+
+    .deep-dive .highlight-box {
+      background: #f5f8fb;
+      border-left: 4px solid var(--primary-light);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 14px 18px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--primary-dark);
+      transition: background 0.15s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item[open] summary {
+      background: #f5f8fb;
+    }
+
+    .faq-item .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .comment-item {
+      background: #fff;
+      padding: 14px 18px;
+    }
+
+    .comment-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .comment-nick {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--primary-dark);
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* 资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .news-card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 18px;
+    }
+
+    .news-card .news-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: 6px;
+    }
+
+    .news-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 标签索引 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .tag-cloud .tag-item {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: var(--tag-radius);
+      background: #f0f4f9;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+
+    .tag-cloud .tag-item:hover {
+      background: var(--primary-light);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 补充板块 - 榜单 */
+    .rank-list {
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rank-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary-light);
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .rank-info {
+      flex: 1;
+    }
+
+    .rank-info .rank-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--primary-dark);
+    }
+
+    .rank-info .rank-desc {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .rank-score {
+      font-size: 13px;
+      font-weight: 700;
+      color: #c0392b;
+      white-space: nowrap;
+    }
+
+    /* 互动板块 */
+    .interact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .interact-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+
+    .interact-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .interact-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: var(--primary-dark);
+      color: #b0c4d8;
+      padding: 40px 0 24px;
+      font-size: 13px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-brand .footer-brand-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #8fa8c0;
+      max-width: 360px;
+    }
+
+    .footer-group h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .footer-group ul {
+      list-style: none;
+    }
+
+    .footer-group li {
+      margin-bottom: 6px;
+    }
+
+    .footer-group a {
+      color: #8fa8c0;
+      font-size: 13px;
+    }
+
+    .footer-group a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: #6b859e;
+      font-size: 12px;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s, transform 0.2s;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--primary-light);
+    }
+
+    .back-to-top:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* 搜索/筛选 */
+    .search-wrap {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .search-wrap input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      transition: border-color 0.15s;
+    }
+
+    .search-wrap input:focus {
+      outline: none;
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+    }
+
+    .search-wrap .btn-search {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .search-wrap .btn-search:hover {
+      background: var(--primary-light);
+    }
+
+    .no-result {
+      padding: 32px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      display: none;
+    }
+
+    .no-result.show {
+      display: block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .left-sidebar {
+        position: static;
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+      }
+
+      .channel-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 8px 12px;
+        gap: 4px;
+        border-radius: 10px;
+        white-space: nowrap;
+      }
+
+      .channel-nav h3 {
+        display: none;
+      }
+
+      .channel-nav ul {
+        display: flex;
+        gap: 4px;
+      }
+
+      .channel-nav li a {
+        padding: 6px 14px;
+        border-left: none;
+        border-radius: 6px;
+        font-size: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 32px 28px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .interact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .site-header .container {
+        gap: 12px;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-hover);
+        z-index: 98;
+        gap: 2px;
+      }
+
+      .main-nav.open {
+        display: flex;
+      }
+
+      .main-nav a {
+        padding: 10px 12px;
+        border-radius: 6px;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 36px;
+        z-index: 99;
+      }
+
+      .hero {
+        padding: 24px 20px;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero .hero-desc {
+        font-size: 14px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compact-item {
+        flex-wrap: wrap;
+        gap: 4px 10px;
+      }
+
+      .compact-item .item-name {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .compact-item .item-date {
+        margin-left: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .deep-dive {
+        padding: 20px;
+      }
+
+      .rank-num {
+        font-size: 15px;
+        width: 22px;
+      }
+
+      .search-wrap {
+        flex-direction: column;
+      }
+
+      .announcement-bar .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .text-accent {
+      color: #c0392b;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announcement-bar">
+    <div class="container">
+      <span class="brand-mark">失效地址7086</span>
+      <div class="announce-item">
+        <span class="announce-date">2026-11-08</span>
+        <span>新增条目「朝阳区酒仙桥路12号（原798厂区东门）」</span>
+      </div>
+      <div class="announce-item">
+        <span class="announce-date">2026-11-05</span>
+        <span>收录突破7086条，第7086条为「静安别墅32号」</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="brand">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="8" width="32" height="24" rx="3" stroke="#1e3a5f" stroke-width="2.5" fill="none"/>
+          <path d="M4 12L20 22L36 12" stroke="#1e3a5f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="28" r="5" fill="#c0392b" opacity="0.85"/>
+          <path d="M28 28L29.5 29.5L32 27" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">失效地址7086</span>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mainNav">
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="#overview">领域概览</a>
+        <a href="#featured">精选条目</a>
+        <a href="#latest">最新更新</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">查阅指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">用户评论</a>
+        <a href="#interact">投稿互动</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="container">
+    <div class="main-layout">
+
+      <!-- 左侧频道导航 -->
+      <aside class="left-sidebar">
+        <nav class="channel-nav" aria-label="频道索引">
+          <h3>频道索引</h3>
+          <ul>
+            <li><a href="#overview" class="active">领域概览</a></li>
+            <li><a href="#featured">精选条目</a></li>
+            <li><a href="#latest">最新更新</a></li>
+            <li><a href="#categories">分类入口</a></li>
+            <li><a href="#deep-dive">深度解析</a></li>
+            <li><a href="#guide">查阅指南</a></li>
+            <li><a href="#faq">常见问答</a></li>
+            <li><a href="#comments">用户评论</a></li>
+            <li><a href="#news">相关资讯</a></li>
+            <li><a href="#related">相关推荐</a></li>
+            <li><a href="#rank">热门榜单</a></li>
+            <li><a href="#interact">投稿互动</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- 右侧主内容 -->
+      <div class="main-content">
+
+        <!-- 首屏 -->
+        <section class="hero" aria-label="首屏介绍">
+          <div class="hero-content">
+            <h1>失效地址7086</h1>
+            <p class="hero-desc">
+              一个记录地址消亡与变迁的档案库。从门牌撤销到路名更迭，从厂区拆迁到社区合并，7086条已失效地址背后是城市肌理的每一次改写。
+            </p>
+            <div class="hero-actions">
+              <a href="#featured" class="btn btn-primary">浏览精选条目</a>
+              <a href="#interact" class="btn btn-outline">提交线索</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-stat">
+              <span class="label">收录条目</span>
+              <span class="value">7,086</span>
+            </div>
+            <div class="hero-stat">
+              <span class="label">今日更新</span>
+              <span class="value">12</span>
+            </div>
+            <div class="hero-stat">
+              <span class="label">涉及城市</span>
+              <span class="value">23</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块1：主题领域概览 -->
+        <section class="section" id="overview">
+          <div class="section-header">
+            <h2>地址消亡与城市变迁：领域概览</h2>
+          </div>
+          <div class="deep-dive" style="padding: 24px 28px;">
+            <p>
+              地址不是永久标识。城市更新、行政区划调整、道路重新命名、门牌系统升级——每一次变动都会让一批旧地址失效。7086条记录覆盖了23个城市，最早可追溯到1998年浦东新区一批因道路拓宽而撤销的门牌，最近一条是2026年10月31日归档的“虹口区四川北路1851号（原第七百货商店）”。
+            </p>
+            <p>
+              失效原因可分为几类：一是物理消亡，建筑拆除或地块用途变更导致地址失去指向；二是行政重编，路名或门牌号在区划调整中被重新分配；三是系统迁移，早期地址数据在数字化过程中未能保留原始编号。杭州市拱墅区2022年完成的“祥符街道门牌重编”属于第二类，原“祥符路188号”等37个门牌被并入“祥园路”序列，旧号不再使用。
+            </p>
+            <p>
+              值得关注的条目类型包括：工厂门牌（如“杨浦区军工路1076号”原上海电缆厂，2019年地块出让后地址注销）、里弄住宅（“黄浦区尚文路133弄”在2015年旧改中整体拆除）、学校旧址（“武昌区粮道街275号”原武汉市第三十三中学，2018年合并后改作他用）。每一类背后有不同的追溯路径与资料源。
+            </p>
+            <p>
+              当前可查的最新记录是2026年10月31日归档的“虹口区四川北路1851号（原第七百货商店）”，来源为虹口区规划和自然资源局2026年10月28日发布的《地名注销公告（第三批）》。同一批次还注销了“天潼路572号”等9个门牌，后续条目正在整理中。
+            </p>
+          </div>
+        </section>
+
+        <!-- 板块2：精选内容推荐 -->
+        <section class="section" id="featured">
+          <div class="section-header">
+            <h2>精选条目：地址消失了，线索还在</h2>
+            <span class="section-sub">按收录时间排序</span>
+          </div>
+          <div class="card-grid">
+            <!-- 卡片1 -->
+            <div class="card">
+              <div class="card-img">
+                <img src="https://picsum.photos/seed/addr798/400/300" width="400" height="300" alt="798厂区东门旧址外观" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3>朝阳区酒仙桥路12号（原798厂区东门）</h3>
+                <div class="card-tags">
+                  <span class="tag tag-primary">工厂门牌</span>
+                  <span class="tag">北京</span>
+                  <span class="tag">2000年代</span>
+                </div>
+                <p class="card-desc">原国营798厂东门门牌，2003年厂区改造为艺术区后该编号停止使用。现存门柱基座，编号“12”仍可辨认。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 9.2</span>
+                  <span>2026-11-07 收录</span>
+                </div>
+              </div>
+            </div>
+            <!-- 卡片2 -->
+            <div class="card">
+              <div class="card-img">
+                <img src="https://picsum.photos/seed/jingan32/400/300" width="400" height="300" alt="静安别墅弄堂入口" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3>静安区静安别墅32号</h3>
+                <div class="card-tags">
+                  <span class="tag tag-primary">里弄住宅</span>
+                  <span class="tag">上海</span>
+                  <span class="tag">1990年代</span>
+                </div>
+                <p class="card-desc">原静安别墅32号，1998年延安中路高架建设时部分拆除，剩余单元门牌在2005年重编中并入威海路序列。原信箱仍存于弄堂口。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 8.7</span>
+                  <span>2026-11-05 收录</span>
+                </div>
+              </div>
+            </div>
+            <!-- 卡片3 -->
+            <div class="card">
+              <div class="card-img">
+                <img src="https://picsum.photos/seed/xiangfu188/400/300" width="400" height="300" alt="祥符老街旧门牌" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3>拱墅区祥符路188号</h3>
+                <div class="card-tags">
+                  <span class="tag tag-primary">行政重编</span>
+                  <span class="tag">杭州</span>
+                  <span class="tag">2022年</span>
+                </div>
+                <p class="card-desc">2022年祥符街道门牌重编，原“祥符路188号”等37个门牌并入“祥园路”序列。老街商铺已全部迁出，路牌拆除前有居民拍照留存。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 8.1</span>
+                  <span>2026-11-03 收录</span>
+                </div>
+              </div>
+            </div>
+            <!-- 卡片4 -->
+            <div class="card">
+              <div class="card-img">
+                <img src="https://picsum.photos/seed/sichuan1851/400/300" width="400" height="300" alt="四川北路第七百货原址" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3>虹口区四川北路1851号（原第七百货商店）</h3>
+                <div class="card-tags">
+                  <span class="tag tag-primary">商业门牌</span>
+                  <span class="tag">上海</span>
+                  <span class="tag">2026年</span>
+                </div>
+                <p class="card-desc">2026年10月28日虹口区地名办公告注销。第七百货1993年开业，2007年停业，建筑2025年拆除。原址现为临时绿地，门牌号不再启用。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 9.5</span>
+                  <span>2026-10-31 收录</span>
+                </div>
+              </div>
+            </div>
+            <!-- 卡片5 -->
+            <div class="card">
+              <div class="card-img">
+                <img src="https://picsum.photos/seed/liangdao275/400/300" width="400" height="300" alt="粮道街旧校门" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3>武昌区粮道街275号（原武汉市第三十三中学）</h3>
+                <div class="card-tags">
+                  <span class="tag tag-primary">学校旧址</span>
+                  <span class="tag">武汉</span>
+                  <span class="tag">2018年</span>
+                </div>
+                <p class="card-desc">2018年与粮道街中学合并后迁出，原校址改为社区服务中心。门牌在2019年户籍地址清理中注销，但旧校门石柱仍嵌有“275”标识。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 7.8</span>
+                  <span>2026-10-29 收录</span>
+                </div>
+              </div>
+            </div>
+            <!-- 卡片6 -->
+            <div class="card">
+              <div class="card-img">
+                <img src="https://picsum.photos/seed/junbao1076/400/300" width="400" height="300" alt="军工路旧厂区大门" loading="lazy">
+              </div>
+              <div class="card-body">
+                <h3>杨浦区军工路1076号（原上海电缆厂）</h3>
+                <div class="card-tags">
+                  <span class="tag tag-primary">工厂门牌</span>
+                  <span class="tag">上海</span>
+                  <span class="tag">2019年</span>
+                </div>
+                <p class="card-desc">上海电缆厂2017年停产，2019年地块出让后门牌注销。厂区大门保留至2021年拆除，原址现为滨江步道的一部分。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 8.3</span>
+                  <span>2026-10-26 收录</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块3：最新更新 / 动态 -->
+        <section class="section" id="latest">
+          <div class="section-header">
+            <h2>最新更新：近30天新增与修订</h2>
+            <span class="section-sub">2026-10-09 至 2026-11-08</span>
+          </div>
+          <div class="compact-list">
+            <div class="compact-item">
+              <span class="item-name">朝阳区酒仙桥路12号</span>
+              <span class="item-desc">补充2003年厂区改造批文号，修正东门坐标。</span>
+              <span class="item-date">2026-11-08</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">静安区静安别墅32号</span>
+              <span class="item-desc">新增居民口述记录（2026-11-04 采访），补充1998年拆迁范围图。</span>
+              <span class="item-date">2026-11-06</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">虹口区四川北路1851号</span>
+              <span class="item-desc">关联公告原文链接，标注第七百货停业年份。</span>
+              <span class="item-date">2026-11-03</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">拱墅区祥符路188号</span>
+              <span class="item-desc">补充重编后新门牌对照表，共涉及37个旧号。</span>
+              <span class="item-date">2026-11-01</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">武昌区粮道街275号</span>
+              <span class="item-desc">新增校门石柱“275”照片（2026-10-28 拍摄）。</span>
+              <span class="item-date">2026-10-30</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">杨浦区军工路1076号</span>
+              <span class="item-desc">更新地块出让时间，由2019年8月更正为2019年6月。</span>
+              <span class="item-date">2026-10-27</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">东城区东四西大街46号</span>
+              <span class="item-desc">新收录条目，原中国美术馆宿舍门牌，2016年注销。</span>
+              <span class="item-date">2026-10-24</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">鼓楼区中山北路101号</span>
+              <span class="item-desc">修正注销年份，由2009年更正为2010年。</span>
+              <span class="item-date">2026-10-20</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">越秀区中山五路82号</span>
+              <span class="item-desc">新增周边街景对比图（2012 vs 2026）。</span>
+              <span class="item-date">2026-10-16</span>
+            </div>
+            <div class="compact-item">
+              <span class="item-name">锦江区春熙路北段28号</span>
+              <span class="item-desc">补充商户迁出记录，最后一家为钟表店（2007年）。</span>
+              <span class="item-date">2026-10-12</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块4：分类入口 -->
+        <section class="section" id="categories">
+          <div class="section-header">
+            <h2>按失效原因分类</h2>
+          </div>
+          <div class="category-grid">
+            <div class="category-item">
+              <div class="cat-name">建筑拆除</div>
+              <div class="cat-count">2,134 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">道路改名</div>
+              <div class="cat-count">1,876 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">门牌重编</div>
+              <div class="cat-count">1,452 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">行政区划调整</div>
+              <div class="cat-count">892 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">系统数据丢失</div>
+              <div class="cat-count">438 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">厂区/园区注销</div>
+              <div class="cat-count">294 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">学校/机构迁址</div>
+              <div class="cat-count">276 条</div>
+            </div>
+            <div class="category-item">
+              <div class="cat-name">商业体更名</div>
+              <div class="cat-count">224 条</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块5：深度解析 -->
+        <section class="section" id="deep-dive">
+          <div class="section-header">
+            <h2>深度解析：地址失效的三种逻辑</h2>
+          </div>
+          <div class="deep-dive">
+            <h3>物理消亡：拆了就是没了</h3>
+            <p>
+              最直接的失效类型。建筑拆除后，原门牌号失去空间参照，行政系统通常在拆除批复后的一年内完成注销。以“虹口区四川北路1851号”为例，时间线如下：2025年3月建筑拆除完毕，2025年6月虹口区地名办启动注销程序，2026年10月28日正式公告，前后跨度约19个月。
+            </p>
+            <p>
+              物理消亡类地址的追溯相对容易——拆除公告、施工许可、地块出让记录都是公开文件。问题在于早期拆除项目（2000年以前）电子化程度低，纸质档案散落在各区档案馆，部分已移交市城建档案馆。杨浦区军工路1076号的原始门牌照片就是从市城建档案馆调出的，拍摄于1998年。
+            </p>
+            <div class="highlight-box">
+              可核对的结构：判断一个拆除类地址的可追溯性，看三项材料是否齐全——拆除批文（或地块出让合同）、注销公告、至少一张拆除前实景照片。三项齐全的条目可信度标记为A，缺一项为B，缺两项为C。目前7086条中A类占41%，B类37%，C类22%。
+            </div>
+
+            <h3>行政重编：号还在，但不是那个号了</h3>
+            <p>
+              比物理消亡更隐蔽的一类。建筑可能还在，但门牌号被重新分配，旧号不再出现在任何官方系统中。杭州祥符街道2022年的重编是个典型：原“祥符路188号”对应的一栋三层民房，重编后变成“祥园路56号”，房子没拆，但地址变了。
+            </p>
+            <p>
+              这类地址的追溯难点在于，旧号和 New 号之间缺乏公开的对照表。祥符街道的做法是在社区服务中心留了一份纸质清单，供居民查询户籍变更使用。站内“祥符路188号”条目中的对照表，就是志愿者2026年9月从这份清单逐条抄录的，共37条。
+            </p>
+            <ul>
+              <li>重编前地址：祥符路188号（对应3层民房，1996年建）</li>
+              <li>重编后地址：祥园路56号（同一建筑，2022年7月起启用）</li>
+              <li>旧号停用时间：2022年7月1日</li>
+              <li>对照表来源：祥符街道社区服务中心纸质清单（2026年9月抄录）</li>
+            </ul>
+
+            <h3>系统数据丢失：查不到，但可能还在</h3>
+            <p>
+              最麻烦的一类。地址物理上可能仍在使用，但早期数字化过程中数据丢失或未迁移，导致在现行系统中查无此号。东城区东四西大街46号（原中国美术馆宿舍）属于此类：建筑仍在，居民也还在用这个地址收信，但2016年东城区地址库升级时该号段未被导入新系统。
+            </p>
+            <p>
+              判断一个地址是否属于系统丢失而非物理消亡，可以对照三个信号：一是邮政投递是否仍可达（寄一封信试试）；二是有无居民仍以该地址登记户籍；三是供电、供水户号是否仍关联该地址。三个信号中两个为“是”，基本可判定为系统丢失。东四西大街46号的三个信号全部为“是”，2026年10月已提交至东城区地名办申请补录。
+            </p>
+          </div>
+        </section>
+
+        <!-- 板块6：查阅指南 / 消费路径 -->
+        <section class="section" id="guide">
+          <div class="section-header">
+            <h2>查阅指南：先查什么，后查什么</h2>
+          </div>
+          <div class="deep-dive" style="padding: 24px 28px;">
+            <p>
+              查一个失效地址，最怕一上来就翻档案。建议的顺序是：先确认注销状态，再找对照关系，最后补实景。三步走下来，多数条目能在半小时内摸清轮廓。
+            </p>
+            <p>
+              <strong>第一步：确认是否真的失效。</strong> 在各地规划和自然资源局官网搜“地名注销公告”，看目标地址是否在近五年的公告列表里。虹口区四川北路1851号就是在2026年10月28日的第三批公告中确认的。如果搜不到公告，不代表没失效，可能是公告未上网，这时转查该地址的邮政投递状态。
+            </p>
+            <p>
+              <strong>第二步：找新旧号对照。</strong> 行政重编类地址的关键材料是街道或社区留存的对照表。祥符路188号的对照表就是从社区服务中心纸质清单抄录的。没有对照表时，可以查同一地块的不动产登记信息，看现地址是否由旧号变更而来。
+            </p>
+            <p>
+              <strong>第三步：补实景和口述。</strong> 实景照片是判断物理消亡最直观的证据。1998年军工路1076号的厂门照片来自市城建档案馆；静安别墅32号的口述记录来自2026年11月4日对原住户的采访。口述不能替代文件，但能补上文件没写的细节——比如门牌是哪一年摘掉的、摘掉时有没有通知。
+            </p>
+            <p>
+              三个步骤的投入产出比不同：第一步通常15分钟内能完成，第二步视情况需要1—2天，第三步的实景和口述最耗时。如果只是确认“这个地址还在不在”，做完第一步就够了。要做完整条目，三步缺一不可。
+            </p>
+          </div>
+        </section>
+
+        <!-- 板块7：FAQ -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <h2>常见问答</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>地址失效后，户籍和身份证上的地址怎么办？</summary>
+              <div class="faq-answer">
+                户籍地址不会因为门牌注销自动变更。居民需要携带户口簿到属地派出所申请地址变更登记。虹口区四川北路1851号原址居民在2026年10月公告后，派出所已开放集中办理窗口，截至11月7日已办理23户。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>怎么判断一个地址是拆了还是只是改了名？</summary>
+              <div class="faq-answer">
+                看现场。建筑还在、门牌换了，属于改名或重编；建筑不在了，属于拆除。祥符路188号的房子还在，只是门牌从“祥符路188号”变成“祥园路56号”，这种情况去现场看一眼就能分辨。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>地名注销公告一般在哪里能查到？</summary>
+              <div class="faq-answer">
+                各区规划和自然资源局官网的“政务公开-地名管理”栏目。虹口区2026年10月28日的《地名注销公告（第三批）》就挂在该栏目下，附件是PDF，需要手动下载。部分老公告只存于区档案馆，未上网。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>旧门牌拆下来之后会保留吗？</summary>
+              <div class="faq-answer">
+                没有统一规定。静安别墅32号的原信箱和门牌被居民自行留存；军工路1076号的厂牌在拆除时由街道城建科收走，现存于杨浦区档案馆。多数普通门牌在拆除时当作建筑垃圾处理，这也是实景照片珍贵的原因。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>同一个地址在不同年份有不同的门牌号，以哪个为准？</summary>
+              <div class="faq-answer">
+                以最后一次官方登记为准。如果地址已被注销，则以注销前最后一次登记为准。东四西大街46号在2016年系统升级时丢失，但居民仍用该号，这种情况下以居民实际使用的地址为准，同时备注系统丢失情况。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>提交一条线索需要提供什么材料？</summary>
+              <div class="faq-answer">
+                至少提供：地址全称、大致失效时间、信息来源（公告截图、照片或口述记录）。有实景照片最好，没有也可以。站内编辑会在3个工作日内核对公告或联系属地街道确认。
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 板块8：用户评论 -->
+        <section class="section" id="comments">
+          <div class="section-header">
+            <h2>用户评论</h2>
+            <span class="section-sub">18 条</span>
+          </div>
+          <div class="comment-list">
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">老杨浦</span><span class="comment-time">2026-11-08 09:12</span></div>
+              <div class="comment-text">军工路1076号那个厂门我小时候天天路过，没想到现在变成步道了。条目里那张1998年的照片拍得真清楚。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">祥符原住民</span><span class="comment-time">2026-11-07 22:45</span></div>
+              <div class="comment-text">祥符路188号就是我老家。2022年改门牌的时候社区贴了通知，但很多人没注意。现在想找原来的号只能翻那张纸质清单。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">档案科小李</span><span class="comment-time">2026-11-07 15:30</span></div>
+              <div class="comment-text">虹口区第三批公告我经手过，四川北路1851号确实是10月28号挂网的。条目里写注销年份2016年那个是笔误吧？公告是2026年的。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">地图控</span><span class="comment-time">2026-11-06 19:08</span></div>
+              <div class="comment-text">东四西大街46号那个案例有意思。系统里查不到，但信还能寄到，说明不是地址没了，是数据没迁过去。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">静安老张</span><span class="comment-time">2026-11-06 11:22</span></div>
+              <div class="comment-text">静安别墅32号那个信箱我见过，还在弄堂口。1998年拆的时候我上初中，记得很清楚。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">跑腿的小王</span><span class="comment-time">2026-11-05 20:17</span></div>
+              <div class="comment-text">送快递最怕这种失效地址，导航到地方发现楼没了。现在接单前先查一下这里有没有记录。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">杭州萝卜</span><span class="comment-time">2026-11-05 14:03</span></div>
+              <div class="comment-text">祥符那个对照表只有37条，但实际改的肯定不止，我问过社区，他们说只整理了临街的。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">武汉伢</span><span class="comment-time">2026-11-04 16:48</span></div>
+              <div class="comment-text">粮道街275号那个校门还在，石柱上确实有275。三十三中合并到粮道街中学之后，老校区就改成社区中心了。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">匿名用户</span><span class="comment-time">2026-11-04 09:30</span></div>
+              <div class="comment-text">有些条目写得太细了，连批文号都有，有些就一句话，质量不太齐。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">城建迷</span><span class="comment-time">2026-11-03 21:11</span></div>
+              <div class="comment-text">军工路1076号那块地2019年出让的，我记得是给了一家开发商，后来建了滨江步道。条目里没写开发商是谁，可以补一下。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">七浦路阿姐</span><span class="comment-time">2026-11-03 10:55</span></div>
+              <div class="comment-text">四川北路第七百货我逛过，1999年的时候一楼有化妆品柜台。拆了蛮可惜的。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">数据搬运工</span><span class="comment-time">2026-11-02 18:40</span></div>
+              <div class="comment-text">建议把A/B/C类可信度的判定标准写清楚，现在只看到比例，不知道具体怎么分。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">成都小陈</span><span class="comment-time">2026-11-02 13:22</span></div>
+              <div class="comment-text">春熙路北段28号那个钟表店，2007年搬走的时候我还在那儿修过一块表。条目里写的迁出年份是对的。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">越秀街坊</span><span class="comment-time">2026-11-01 20:08</span></div>
+              <div class="comment-text">中山五路82号那个对比图，2012年那边还有骑楼，2026年全拆了。变化太大。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">路牌收藏者</span><span class="comment-time">2026-10-31 16:33</span></div>
+              <div class="comment-text">有没有人收集旧门牌？我手上有几块从拆迁工地捡的，想找原地址对应的信息。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">南京小杆子</span><span class="comment-time">2026-10-30 11:47</span></div>
+              <div class="comment-text">中山北路101号那个注销年份改过？我记得之前写的是2009年。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">看热闹的</span><span class="comment-time">2026-10-29 22:15</span></div>
+              <div class="comment-text">这个站挺有意思的，就是更新有点慢，一个月才十几条。</div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-top"><span class="comment-nick">规划院小赵</span><span class="comment-time">2026-10-28 14:02</span></div>
+              <div class="comment-text">四川北路1851号的公告原文我下载了，附件里还有注销范围图，建议条目里加上图。</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块9：相关资讯 -->
+        <section class="section" id="news">
+          <div class="section-header">
+            <h2>相关资讯</h2>
+          </div>
+          <div class="news-grid">
+            <div class="news-card">
+              <div class="news-date">2026-11-07</div>
+              <h3>虹口区第三批地名注销公告发布，四川北路1851号在列</h3>
+              <p>虹口区规划和自然资源局10月28日发布公告，注销四川北路1851号等10个门牌，原第七百货商店建筑已于2025年拆除，原址临时绿地预计2027年启动建设。</p>
+            </div>
+            <div class="news-card">
+              <div class="news-date">2026-11-04</div>
+              <h3>祥符街道旧门牌对照表数字化，37条记录上网</h3>
+              <p>拱墅区祥符街道社区服务中心11月3日完成纸质清单扫描，37条旧门牌与新门牌的对照关系已录入街道政务系统，居民可在线查询。</p>
+            </div>
+            <div class="news-card">
+              <div class="news-date">2026-10-31</div>
+              <h3>东四西大街46号补录申请进入审核流程</h3>
+              <p>东城区地名办10月30日确认收到中国美术馆宿舍门牌补录申请，需核对2016年地址库升级日志，预计15个工作日内给出答复。</p>
+            </div>
+            <div class="news-card">
+              <div class="news-date">2026-10-27</div>
+              <h3>杨浦区军工路1076号地块档案完成移交</h3>
+              <p>上海电缆厂原址地块的最后一箱档案10月24日由杨浦区档案馆移交至市城建档案馆，包含1998年门牌照片底片和2003年厂区测绘图。</p>
+            </div>
+            <div class="news-card">
+              <div class="news-date">2026-10-22</div>
+              <h3>静安别墅32号口述史项目新增4位受访者</h3>
+              <p>静安区档案馆10月20日完成第四批口述采集，原住户回忆1998年拆迁时门牌摘除的具体日期为7月16日，比此前记载的7月20日提前4天。</p>
+            </div>
+            <div class="news-card">
+              <div class="news-date">2026-10-15</div>
+              <h3>粮道街275号旧址改造为社区服务中心，年底开放</h3>
+              <p>武昌区粮道街街道办10月12日通报，原三十三中校舍改造工程已完工80%，计划12月开放，旧校门石柱保留，将设历史沿革展板。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块10：相关推荐 -->
+        <section class="section" id="related">
+          <div class="section-header">
+            <h2>相关推荐</h2>
+          </div>
+          <div class="tag-cloud">
+            <a href="#featured" class="tag-item">四川北路1851号</a>
+            <a href="#featured" class="tag-item">军工路1076号</a>
+            <a href="#featured" class="tag-item">祥符路188号</a>
+            <a href="#featured" class="tag-item">静安别墅32号</a>
+            <a href="#featured" class="tag-item">粮道街275号</a>
+            <a href="#featured" class="tag-item">东四西大街46号</a>
+            <a href="#featured" class="tag-item">中山五路82号</a>
+            <a href="#featured" class="tag-item">春熙路北段28号</a>
+          </div>
+        </section>
+
+        <!-- 板块11：补充板块 - 热门榜单 -->
+        <section class="section" id="rank">
+          <div class="section-header">
+            <h2>热门查询榜单</h2>
+            <span class="section-sub">按近7日访问量</span>
+          </div>
+          <div class="rank-list">
+            <div class="rank-item">
+              <span class="rank-num">1</span>
+              <div class="rank-info">
+                <div class="rank-name">虹口区四川北路1851号（原第七百货商店）</div>
+                <div class="rank-desc">注销公告 · 2026年10月28日</div>
+              </div>
+              <span class="rank-score">1,284 次</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">2</span>
+              <div class="rank-info">
+                <div class="rank-name">朝阳区酒仙桥路12号（原798厂区东门）</div>
+                <div class="rank-desc">工厂门牌 · 2003年停用</div>
+              </div>
+              <span class="rank-score">943 次</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">3</span>
+              <div class="rank-info">
+                <div class="rank-name">静安区静安别墅32号</div>
+                <div class="rank-desc">里弄住宅 · 1998年部分拆除</div>
+              </div>
+              <span class="rank-score">871 次</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">4</span>
+              <div class="rank-info">
+                <div class="rank-name">拱墅区祥符路188号</div>
+                <div class="rank-desc">行政重编 · 2022年停用</div>
+              </div>
+              <span class="rank-score">662 次</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">5</span>
+              <div class="rank-info">
+                <div class="rank-name">杨浦区军工路1076号（原上海电缆厂）</div>
+                <div class="rank-desc">工厂门牌 · 2019年注销</div>
+              </div>
+              <span class="rank-score">588 次</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 板块12：互动板块 -->
+        <section class="section" id="interact">
+          <div class="section-header">
+            <h2>投稿与互动</h2>
+          </div>
+          <div class="interact-grid">
+            <div class="interact-card">
+              <h3>提交地址线索</h3>
+              <p>手头有失效地址的照片、公告截图或口述记录？提交后编辑会在3个工作日内核对，确认后收录并标注来源。</p>
+              <form class="search-wrap" id="submitForm" onsubmit="event.preventDefault(); alert('示例表单，暂不提交。');">
+                <input type="text" placeholder="输入地址全称或线索描述" aria-label="地址线索描述">
+                <button type="submit" class="btn-search">提交</button>
+              </form>
+            </div>
+            <div class="interact-card">
+              <h3>核对与纠错</h3>
+              <p>条目信息有误？在对应条目页点击“纠错”按钮，或直接联系编辑。2026年10月共收到47条纠错反馈，其中29条已核实并更新。</p>
+              <p style="font-size:13px; color:var(--text-tertiary); margin-top:8px;">最近一条纠错：东四西大街46号注销年份由2009更正为2010。</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="8" width="32" height="24" rx="3" stroke="#fff" stroke-width="2.5" fill="none"/>
+              <path d="M4 12L20 22L36 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="30" cy="28" r="5" fill="#c0392b" opacity="0.85"/>
+              <path d="M28 28L29.5 29.5L32 27" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="footer-brand-text">失效地址7086</span>
+          </div>
+          <p class="footer-desc">
+            7,086条地址记录，时间跨度1998—2026年。涵盖工厂门牌、里弄住宅、学校旧址、商业体等类型，每个工作日更新。地址消亡不是终点，是城市记忆的起点。
+          </p>
+        </div>
+        <div class="footer-group">
+          <h4>条目类型</h4>
+          <ul>
+            <li><a href="#categories">工厂门牌</a></li>
+            <li><a href="#categories">里弄住宅</a></li>
+            <li><a href="#categories">学校旧址</a></li>
+            <li><a href="#categories">商业门牌</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h4>按城市</h4>
+          <ul>
+            <li><a href="#featured">上海</a></li>
+            <li><a href="#featured">北京</a></li>
+            <li><a href="#featured">杭州</a></li>
+            <li><a href="#featured">武汉</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h4>关于</h4>
+          <ul>
+            <li><a href="#overview">领域概览</a></li>
+            <li><a href="#guide">查阅指南</a></li>
+            <li><a href="#interact">投稿互动</a></li>
+            <li><a href="#faq">常见问答</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 失效地址7086 · 地址档案示例项目</span>
+        <span>本站条目为示例数据，部分来源标注为虚构，仅供内容展示。</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    // 页头滚动阴影
+    const header = document.getElementById('site-header');
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      if (window.scrollY > window.innerHeight) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 移动端导航切换
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.classList.toggle('open');
+    });
+
+    // 点击导航后收起
+    mainNav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Esc关闭
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // 点击遮罩关闭（移动端点击菜单外区域）
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 740 && mainNav.classList.contains('open')) {
+        if (!mainNav.contains(e.target) && e.target !== navToggle) {
+          mainNav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
+    // 侧边栏高亮（简易滚动监听）
+    const sections = document.querySelectorAll('section[id]');
+    const sidebarLinks = document.querySelectorAll('.channel-nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      sidebarLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "失效地址7086",
+    "description": "记录地址消亡与变迁的档案库，收录7086条已失效地址条目，覆盖工厂门牌、里弄住宅、学校旧址等类型，提供深度解析、查阅指南与用户评论。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "地址失效后，户籍和身份证上的地址怎么办？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "户籍地址不会因为门牌注销自动变更。居民需要携带户口簿到属地派出所申请地址变更登记。虹口区四川北路1851号原址居民在2026年10月公告后，派出所已开放集中办理窗口，截至11月7日已办理23户。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "怎么判断一个地址是拆了还是只是改了名？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "看现场。建筑还在、门牌换了，属于改名或重编；建筑不在了，属于拆除。祥符路188号的房子还在，只是门牌从“祥符路188号”变成“祥园路56号”，这种情况去现场看一眼就能分辨。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "地名注销公告一般在哪里能查到？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "各区规划和自然资源局官网的“政务公开-地名管理”栏目。虹口区2026年10月28日的《地名注销公告（第三批）》就挂在该栏目下，附件是PDF，需要手动下载。部分老公告只存于区档案馆，未上网。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "旧门牌拆下来之后会保留吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "没有统一规定。静安别墅32号的原信箱和门牌被居民自行留存；军工路1076号的厂牌在拆除时由街道城建科收走，现存于杨浦区档案馆。多数普通门牌在拆除时当作建筑垃圾处理，这也是实景照片珍贵的原因。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "同一个地址在不同年份有不同的门牌号，以哪个为准？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "以最后一次官方登记为准。如果地址已被注销，则以注销前最后一次登记为准。东四西大街46号在2016年系统升级时丢失，但居民仍用该号，这种情况下以居民实际使用的地址为准，同时备注系统丢失情况。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "提交一条线索需要提供什么材料？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "至少提供：地址全称、大致失效时间、信息来源（公告截图、照片或口述记录）。有实景照片最好，没有也可以。站内编辑会在3个工作日内核对公告或联系属地街道确认。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+  </html>
